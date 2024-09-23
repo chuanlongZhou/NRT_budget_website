@@ -1,5 +1,5 @@
 <template>
-  <v-footer app padless>
+  <v-footer padless>
       <v-col align="center" cols="6"> PAPER LINK </v-col>
         <v-col class="text-center" cols="6">
           <span>Website developed by</span>
