@@ -8,7 +8,7 @@
     :pan-on-drag="false"
     :fit-view="false"
   >
-    <Background pattern-color="#aaa" :gap="16" />
+    <!-- <Background pattern-color="#aaa" :gap="16" /> -->
     <defs>
       <!-- Define marker for the end of the edge -->
       <marker
@@ -309,9 +309,9 @@ const edges = ref([
 <style scoped>
 .flowchart-container {
   height: 550px; /* Set the fixed height */
-  background-color: #e9e8e8;
-  border: 2px solid #4d4d4d;
+  background-color: #ffffff;
+  /* border: 2px solid #4d4d4d;
   border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.518);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.518); */
 }
 </style>

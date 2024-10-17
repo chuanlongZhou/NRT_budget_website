@@ -1,19 +1,46 @@
 <template>
-  <v-footer padless>
-      <v-col align="center" cols="6"> PAPER LINK </v-col>
-        <v-col class="text-center" cols="6">
-          <span>Website developed by</span>
-          <a
-            href="https://defve1988.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="jellyfish"
-          >
-            Defve
-            <v-icon class="jellyfish">mdi-jellyfish</v-icon>
-          </a>
-          @LSCE, 2024
-        </v-col>
+  <v-footer padless height="300px">
+    <v-col align="center" cols="6">
+      <img
+      src="@/assets/logos/ipsl.png"
+      alt="Calipso Dark Icon"
+      height="60"
+      class="mx-4"
+    />
+    <img
+      src="@/assets/logos/log1.png"
+      alt="Calipso Dark Icon"
+      height="60"
+      class="mx-4"
+    />
+    <img
+      src="@/assets/logos/university-of-exeter-dark.svg"
+      alt="Calipso Dark Icon"
+      height="60"
+      class="mx-4"
+    />
+
+
+    </v-col>
+    <v-col class="text-center" cols="6">
+      <p>PAPER LINK</p>
+      <p> ...</p>
+      
+      <p>Other information</p>
+      <p> ... </p>
+
+      <span>Website created by</span>
+      <a
+        href="https://defve1988.github.io/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="jellyfish"
+      >
+        Chuanlong Zhou
+        <v-icon class="jellyfish">mdi-jellyfish</v-icon>
+      </a>
+      @LSCE, 2024
+    </v-col>
   </v-footer>
 </template>
 
@@ -23,7 +50,7 @@
 <style scoped>
 /* You can customize footer styles here */
 .v-footer {
-  background-color: #252525ca;
+  background-color: #178735;
 }
 
 a {

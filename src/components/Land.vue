@@ -168,15 +168,17 @@ const regions = ref([
 }
 
 .image:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
   z-index: 99;
-  box-shadow: 0 0 10px rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgba(126, 126, 126, 0.574);
   background-color: white;
+  /* border-style: solid;
+  border-color: #6b6b6b9f; */
 }
 .content_text {
   font-size: 16;
   font-weight: light;
-  color: #c2c2c2;
+  color: #4d4d4d;
 }
 .btn_toggle {
   font-size: 12px;

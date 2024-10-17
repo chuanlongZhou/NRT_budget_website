@@ -1,37 +1,64 @@
 <template>
-  <v-container class="main_app" width="80%">
-    <p class="text-start text-h4 text-uppercase">Low latency carbon budget analysis reveals a large decline of the land carbon sink in 2023</p>
+  <v-container class="main_app mt-10" width="80%">
+    <!-- <p class="text-start text-h4 text-uppercase">Low latency carbon budget analysis reveals a large decline of the land carbon sink in 2023</p> -->
     <!-- Sections -->
+    Need Some icons here
+    <v-row>
+      <v-col align="center">
+        <img
+          src="@/assets/icons/trees.svg"
+          alt="Calipso Dark Icon"
+          height="80"
+          class="mx-4"
+        />
+      </v-col>
+      <v-col  align="center">
+        <img
+          src="@/assets/icons/leaves.svg"
+          alt="Calipso Dark Icon"
+          height="80"
+          class="mx-4"
+        />
+      </v-col>
+      <v-col  align="center">
+        <img
+          src="@/assets/icons/marine.svg"
+          alt="Calipso Dark Icon"
+          height="80"
+          class="mx-4"
+        />
+      </v-col>
+    </v-row>
     <section id="introduction" class="my-5 section-offset">
-      <h2>Concepts</h2>
-      <p>
-        How a low latency budget is estimated ? We use a bottom up approach
-        where global dynamic vegetation models are integrated with recent
-        climate analysis as input data, and ocean models emulators based on
-        artificial intelligence. We also use a top down atmospheric inversion
-        models which maps recent CO2 fluxes by assimilating column measurements
-        of the OCO-2 satellite from NASA.
+      <p class="text-center">
+        To estimate low latency budget, we use a combination of top-down and
+        bottom-up approaches. We use a bottom up approach where global dynamic
+        vegetation models are integrated with recent climate analysis as input
+        data, and ocean models emulators based on artificial intelligence. We
+        also use a top down atmospheric inversion models which maps recent CO2
+        fluxes by assimilating column measurements of the OCO-2 satellite from
+        NASA.
       </p>
       <br />
+
+      <v-row height="630px">
+        <v-col cols="6" lg="6" md="12" sm="12" >
+          <u><b>1. Top-down budget</b></u>
+
+          <FlowchartA class="mt-3" />
+        </v-col>
+        <v-col cols="6" lg="6" md="12" sm="12">
+          <u><b>2. Bottom-up budget</b></u>
+
+          <FlowchartB class="mt-3" />
+        </v-col>
+      </v-row>
+
       <p>
         The two approaches are very consistent globally and they show similar
         anomalies at the regional level, but we see more contrasted flux
-        anomalies in the inversion
+        anomalies in the inversion.
       </p>
-      <v-container height="630px">
-        <v-row>
-          <v-col cols="6">
-            <u><b>1. Top-down budget</b></u>
-
-            <FlowchartA class="mt-3"/>
-          </v-col>
-          <v-col cols="6">
-            <u><b>2. Bottom-up budget</b></u>
-
-            <FlowchartB class="mt-3"/>
-          </v-col>
-        </v-row>
-      </v-container>
     </section>
 
     <v-divider></v-divider>
@@ -51,7 +78,7 @@
           <v-img
             class="image py-1"
             src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/main_1.png?raw=true"
-            width="400"
+            width="450"
           ></v-img>
         </v-col>
       </v-row>
@@ -60,7 +87,7 @@
           <v-img
             class="image py-5"
             src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/main_2.png?raw=true"
-            width="400"
+            width="450"
           ></v-img>
         </v-col>
         <v-col cols="8">
@@ -72,7 +99,7 @@
             large bar. The top down inversion budget is he inside bar.
           </p>
 
-          <v-expansion-panels class="mt-5">
+          <v-expansion-panels class="mt-10" color="primary">
             <v-expansion-panel
               title="Global Map of the CO2 fluxes anomalies in 2023"
             >
@@ -120,7 +147,9 @@
   </v-container>
 </template>
 
+
 <script setup>
+
 import { ref } from "vue";
 
 const slides = ref([
@@ -148,18 +177,10 @@ const slides = ref([
 </script>
 
 <style>
-.main_app {
-  background-color: #585858e8;
-}
-/* You can add some custom styles if needed */
-.v-toolbar-title {
-  font-weight: bold;
-  font-size: 32px;
-}
 .content_text {
   font-size: 16;
   font-weight: light;
-  color: #c2c2c2;
+  color: #4d4d4d;
 }
 .v-subheader {
   font-size: 18px;
@@ -173,7 +194,7 @@ html {
 
 .section-offset {
   position: relative;
-  padding-top: 60px; /* Adjust this value according to the size of your app bar or header */
+  padding-top: 120px; /* Adjust this value according to the size of your app bar or header */
   margin-top: -60px; /* Use negative margin to pull the section back */
 }
 
@@ -184,11 +205,24 @@ html {
 }
 
 .image:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
   z-index: 99;
-  box-shadow: 0 0 10px rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgba(126, 126, 126, 0.574);
   background-color: white;
-  border-style: solid;
-  border-color: #6b6b6b;
+  /* border-style: solid;
+  border-color: #6b6b6b9f; */
+}
+
+.slide-in-left {
+  /* Initial state: hidden and translated to the left */
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.slide-in-left.visible {
+  /* Visible state: original position and fully opaque */
+  transform: translateX(0);
+  opacity: 1;
 }
 </style>
