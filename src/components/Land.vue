@@ -19,28 +19,33 @@
         </p>
       </v-col>
       <v-col cols="8" class="pl-5">
-        
         <v-row>
-          <v-btn-toggle
-            v-model="toggle"
-            divided
-            max="2"
-            multiple
-            density="compact"
-          >
-            <v-btn
-              v-for="(region, i) in regions"
-              :key="i"
-              :value="i"
-              height="30px"
-              density="compact"
-              class="text-capitalize btn_toggle px-0"
-            >
-              {{ region.title }}
-            </v-btn>
-          </v-btn-toggle>
+          <v-tooltip text="Select/unselect another region for compare">
+            <template v-slot:activator="{ props }">
+              <v-btn-toggle
+                v-model="toggle"
+                divided
+                max="2"
+                multiple
+                density="compact"
+                tooltip="top"
+                v-bind="props"
+              >
+                <v-btn
+                  v-for="(region, i) in regions"
+                  :key="i"
+                  :value="i"
+                  height="30px"
+                  density="compact"
+                  class="text-capitalize btn_toggle px-0"
+                >
+                  {{ region.title }}
+                </v-btn>
+              </v-btn-toggle>
+            </template>
+          </v-tooltip>
         </v-row>
-        <v-row>
+        <v-row v-if="toggle.length > 0">
           <v-col col="6">
             DVGM -{{ regions[toggle[0]].title }}
             <v-img
@@ -58,7 +63,7 @@
             ></v-img>
           </v-col>
         </v-row>
-        <v-row>
+        <v-row v-if="toggle.length > 1">
           <v-col col="6">
             DVGM -{{ regions[toggle[1]].title }}
             <v-img
@@ -84,7 +89,8 @@
 <script setup>
 import { ref } from "vue";
 
-const toggle = ref([0, 1]);
+const toggle = ref([0]);
+
 const regions = ref([
   {
     title: "Global",

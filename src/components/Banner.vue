@@ -1,14 +1,27 @@
 <template>
   <v-row align="center" width="100%" class="text-secondary bg-primary">
     <!-- Left Section: Introduction Text -->
-    <v-col cols="6" md="4" class=" pa-10" >
-      <div >
+    <v-col cols="6" md="4" class="pa-10">
+      <div>
         <h2>Welcome to Near Real-time Carbon Budget Project</h2>
-        <p>
-          Discover the near real-time carbon budget for global, land and ocean.
+        <p class="text-overline">
+          We reveals a large <b><u>DECLINE</u></b> of the land carbon sink
+          <b><u>in 2023</u></b
+          >.
         </p>
+        <br />
         <p>
-          We reveals a large <b><u>DECLINE</u></b> of the land carbon sink <b><u>in 2023</u></b>.
+          The objective of the near real time global carbon budget research
+          initiative is to monitor the fate of fossil CO2 emissions from human
+          activities into the increase of CO2 in the atmosphere and the capture
+          by ocean and land carbon sinks. Complementary to the annual 
+          <a href="https://essd.copernicus.org/articles/14/4811/2022/" target="_blank">
+          Global Carbon Budget </a>, we provide each semester a
+          synthesis of emissions and natural CO2 sinks using the latest
+          atmospheric data and a suite of 
+          <a href="https://arxiv.org/abs/2407.12447" target="_blank">
+          peer-reviewed modeling approaches
+          </a>.
         </p>
       </div>
     </v-col>

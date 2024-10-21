@@ -1,0 +1,25 @@
+[
+    {
+      "name": "Philippe Ciais",
+      "title": "Principal Investigator",
+      "institute":"LSCE",
+      "description": "Philippe, is a senior researcher at LSCE. He is an internationally recognized expert of the global carbon cycle and greenhouse gases emissions monitoring. He is the author of over a thousand of peer-reviewed publications including many in Nature, Science and high-impact journals (cited 170000 times). He is among the top 1% most-cited scientists in the fields of Geosciences and Ecology.",
+      "photo": "philippe_ciais.jpg",
+      "email": "philippe.ciais@lsce.ipsl.fr",
+      "homeUrl": "https://www.lsce.ipsl.fr/en/cycles-transferts/mosaic/pisp/philippe-ciais/",
+      "scholarUrl": "https://scholar.google.com/citations?hl=en&user=PJhqfAoAAAAJ",
+      "githubUrl": ""
+    },
+    {
+      "name": "Chuanlong Zhou",
+      "title": "Web Designer & Developer",
+      "institute":"LSCE",
+      "description": "Research scientist at LSCE with an interdisciplinary background in engineering, environmental science, and computer science. Passionate about integrating environmental science, data science, machine learning, and web technology to address both scientific and real-world challenges. ",
+      "photo": "chuanlong_zhou.png",
+      "email": "chuanlong.zhou@lsce.ipsl.fr",
+      "homeUrl": "https://defve1988.github.io/",
+      "scholarUrl": "https://scholar.google.com/citations?hl=en&user=I1xZXuEAAAAJ",
+      "githubUrl": "https://github.com/chuanlongZhou"
+    }
+  ]
+  

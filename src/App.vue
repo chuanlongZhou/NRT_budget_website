@@ -3,6 +3,7 @@
     <Header :items="items" />
     <v-main>
       <Banner :images="images" />
+
       <router-view />
     </v-main>
 

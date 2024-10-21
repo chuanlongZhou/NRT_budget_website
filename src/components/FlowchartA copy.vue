@@ -47,8 +47,44 @@ import "@vue-flow/core/dist/style.css"; // Vue Flow core styles
 // Define nodes and edges for the flowchart
 const nodes = ref([
   {
+    id: "oco2",
+    type: "input",
+    position: { x: 50, y: 30 },
+    data: { label: "OCO2 Satellite \nAtmospheric CO2 Data" },
+    class: "custom-node",
+    style: {
+      backgroundColor: "#ff5722",
+      color: "white",
+      whiteSpace: "pre-wrap",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "center",
+      borderRadius: "5px",
+      padding: "10px",
+    }, // Rectangle
+    draggable: false, // Prevent node dragging
+  },
+  {
+    id: "wind-fields",
+    position: { x: 280, y: 50 },
+    data: { label: "Wind Fields" },
+    style: {
+      backgroundColor: "#2721c4",
+      color: "white",
+      whiteSpace: "pre-wrap",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "center",
+      borderRadius: "5px",
+      padding: "10px",
+    }, // Rectangle
+    draggable: false, // Prevent node dragging
+  },
+  {
     id: "fossil-emissions",
-    position: { x: 50, y: 150+25 },
+    position: { x: 350, y: 150 },
     data: { label: "Fossil Emissions \nEstimates" },
     style: {
       backgroundColor: "gray",
@@ -62,53 +98,14 @@ const nodes = ref([
       padding: "10px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
-    sourcePosition: Position.Top,
-  },
-  
-  {
-    id: "n5",
-    position: { x: 40+175, y: 25 },
-    data: { label: "Land Models" },
-    style: {
-      backgroundColor: "#16a124",
-      whiteSpace: "pre-wrap",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
-      borderRadius: "5px",
-      padding: "10px",
-    }, // Rectangle
-    draggable: false, // Prevent node dragging
-    targetPosition: Position.Left,
+    sourcePosition: Position.Bottom,
   },
   {
-    id: "n6",
-    position: { x: 180+175, y: 25 },
-    data: { label: "Land AI models \n(emulators)" },
+    id: "atmospheric-inversion",
+    position: { x: 160, y: 250 },
+    data: { label: "Atmospheric inversion" },
     style: {
-      backgroundColor: "#16a124",
-      borderColor: "#a12fba",
-      borderWidth: "3px",
-      whiteSpace: "pre-wrap",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
-      borderRadius: "5px",
-      padding: "10px",
-    }, // Rectangle
-    draggable: false, // Prevent node dragging
-  },
-  {
-    id: "n7",
-    position: { x: 350+175+65, y: 25 },
-    data: { label: "Ocean AI models \n(emulators)" },
-    style: {
-      backgroundColor: "#0c127d",
-      color: "white",
-      borderColor: "#a12fba",
-      borderWidth: "3px",
+      backgroundColor: "#2299e3",
       whiteSpace: "pre-wrap",
       display: "flex",
       justifyContent: "center",
@@ -121,7 +118,7 @@ const nodes = ref([
   },
   {
     id: "atmospheric-inversion2",
-    position: { x: 290+175, y: 270 },
+    position: { x: 290, y: 270 },
     data: { label: "" },
     style: { backgroundColor: "lightblue" }, // Rectangle
     draggable: false, // Prevent node dragging
@@ -129,7 +126,7 @@ const nodes = ref([
   },
   {
     id: "land-sink",
-    position: { x: 50+175, y: 150+25 },
+    position: { x: 50, y: 350 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -145,7 +142,7 @@ const nodes = ref([
   },
   {
     id: "ocean-sink",
-    position: { x: 200+175, y: 150+25 },
+    position: { x: 200, y: 350 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -162,8 +159,8 @@ const nodes = ref([
   },
   {
     id: "co2-growth-rate",
-    position: { x: 350+175, y: 150+10 },
-    data: { label: "CO2 growth rate from \nNOAA and SCRIPPS surface stations" },
+    position: { x: 350, y: 350 },
+    data: { label: "CO2 Growth Rate" },
     style: {
       backgroundColor: "#e6a525",
       whiteSpace: "pre-wrap",
@@ -176,10 +173,20 @@ const nodes = ref([
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
-
+  {
+    id: "co2-growth-rate2",
+    position: { x: 370, y: 380 },
+    data: { label: " from satellite data" },
+    style: {
+      color: "#2b2b30",
+      borderStyle: "none",
+      fontSize: "12px",
+    }, // Rectangle
+    draggable: false, // Prevent node dragging
+  },
   {
     id: "ff",
-    position: { x: 220+175, y: 280+25 },
+    position: { x: 220, y: 450 },
     data: { label: "FF" },
     style: {
       backgroundColor: "#2b2b30",
@@ -196,7 +203,7 @@ const nodes = ref([
   },
   {
     id: "+",
-    position: { x: 165+175, y: 150+30 },
+    position: { x: 165, y: 360 },
     data: { label: "+" },
     style: {
       color: "#2b2b30",
@@ -206,94 +213,66 @@ const nodes = ref([
   },
   {
     id: "+2",
-    position: { x: 320+175, y: 150+30 },
+    position: { x: 320, y: 360 },
     data: { label: "+" },
     style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
-    draggable: false, // Prevent node dragging
-  },
-  {
-    id: "+3",
-    position: { x: 330+155, y: 280+30 },
-    data: { label: "+" },
-    style: { color: "#2b2b30", borderStyle: "none", fontSize: "40px" }, // Rectangle
-    draggable: false, // Prevent node dragging
-  },
-  {
-    id: "+4",
-    position: { x: 330+200, y: 280+20 },
-    data: { label: "Budget \nImbalance" },
-    style: {
-      color: "#2b2b30",
-      borderStyle: "none",
-      whiteSpace: "pre-wrap",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
-      borderRadius: "100px",
-      padding: "20px",
-    }, // Rectangle
     draggable: false, // Prevent node dragging
   },
 ]);
 
 const edges = ref([
   {
-    id: "e0",
-    source: "fossil-emissions",
-    target: "n5",
-    type: "smoothstep",
-    animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
-  },
-
-  {
     id: "e1",
-    source: "n1",
-    target: "n5",
+    source: "oco2",
+    target: "atmospheric-inversion",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
   },
   {
     id: "e2",
-    source: "n1",
-    target: "n6",
+    source: "wind-fields",
+    target: "atmospheric-inversion",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
   {
     id: "e3",
-    source: "n2",
-    target: "n6",
+    source: "fossil-emissions",
+    target: "atmospheric-inversion2",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
   {
     id: "e4",
-    source: "n3",
-    target: "n7",
+    source: "atmospheric-inversion",
+    target: "land-sink",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
   {
     id: "e5",
-    source: "n4",
-    target: "n7",
+    source: "atmospheric-inversion",
+    target: "ocean-sink",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
   {
     id: "e6",
-    source: "n5",
+    source: "atmospheric-inversion",
     target: "co2-growth-rate",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
   {
     id: "e7",
@@ -301,7 +280,8 @@ const edges = ref([
     target: "ff",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
   {
     id: "e8",
@@ -309,7 +289,8 @@ const edges = ref([
     target: "ff",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
   {
     id: "e9",
@@ -317,31 +298,8 @@ const edges = ref([
     target: "ff",
     type: "smoothstep",
     animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
-  },
-  {
-    id: "e10",
-    source: "n5",
-    target: "land-sink",
-    type: "smoothstep",
-    animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
-  },
-  {
-    id: "e11",
-    source: "n7",
-    target: "co2-growth-rate",
-    type: "smoothstep",
-    animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
-  },
-  {
-    id: "e12",
-    source: "n6",
-    target: "ocean-sink",
-    type: "smoothstep",
-    animated: true,
-    style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
+    style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
+
   },
 ]);
 
@@ -350,7 +308,7 @@ const edges = ref([
 
 <style scoped>
 .flowchart-container {
-  height: 450px; /* Set the fixed height */
+  height: 550px; /* Set the fixed height */
   background-color: #ffffff;
   /* border: 2px solid #4d4d4d;
   border-radius: 15px;
