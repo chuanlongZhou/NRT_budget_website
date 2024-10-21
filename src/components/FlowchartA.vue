@@ -40,7 +40,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { Position, VueFlow } from "@vue-flow/core";
+import { Position, VueFlow, MarkerType } from "@vue-flow/core";
 import { Background } from "@vue-flow/background";
 import "@vue-flow/core/dist/style.css"; // Vue Flow core styles
 
@@ -49,7 +49,7 @@ const nodes = ref([
   {
     id: "oco2",
     type: "input",
-    position: { x: 550, y: 50 },
+    position: { x: 550, y: 64},
     data: { label: "OCO2 Satellite Data" },
     class: "custom-node",
     style: {
@@ -84,14 +84,18 @@ const nodes = ref([
       padding: "10px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
-    sourcePosition: Position.Bottom,
+    sourcePosition: Position.Top,
   },
   {
     id: "atmospheric-inversion",
     position: { x: 260, y: 50 },
-    data: { label: "Atmospheric inversion" },
+    data: { label: "Atmospheric Inversion \nModel" },
     style: {
-      backgroundColor: "#2299e3",
+      backgroundColor: "#ff5722",
+      color: "white",
+      borderColor: "#a13203",
+      borderWidth: "3px",
+
       whiteSpace: "pre-wrap",
       display: "flex",
       justifyContent: "center",
@@ -109,11 +113,11 @@ const nodes = ref([
     data: { label: "" },
     style: { backgroundColor: "lightblue" }, // Rectangle
     draggable: false, // Prevent node dragging
-    sourcePosition: Position.Left,
+    targetPosition: Position.Left,
   },
   {
     id: "land-sink",
-    position: { x: 220, y: 150 },
+    position: { x: 220, y: 200 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -129,7 +133,7 @@ const nodes = ref([
   },
   {
     id: "ocean-sink",
-    position: { x: 350, y: 150 },
+    position: { x: 350, y: 200 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -146,10 +150,11 @@ const nodes = ref([
   },
   {
     id: "co2-growth-rate",
-    position: { x: 500, y: 140 },
+    position: { x: 500, y: 200 },
     data: { label: "CO2 Growth Rate\n from satellite data" },
     style: {
-      backgroundColor: "#e6a525",
+      backgroundColor: "#5eabe6",
+      color:"white",
       whiteSpace: "pre-wrap",
       display: "flex",
       justifyContent: "center",
@@ -171,40 +176,40 @@ const nodes = ref([
   //   }, // Rectangle
   //   draggable: false, // Prevent node dragging
   // },
-  {
-    id: "ff",
-    position: { x: 370, y: 280 },
-    data: { label: "FF" },
-    style: {
-      backgroundColor: "#2b2b30",
-      color: "white",
-      whiteSpace: "pre-wrap",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      textAlign: "center",
-      borderRadius: "100px",
-      padding: "20px",
-    }, // Rectangle
-    draggable: false, // Prevent node dragging
-  },
-  {
-    id: "+",
-    position: { x: 470, y: 160 },
-    data: { label: "+" },
-    style: {
-      color: "#2b2b30",
-      borderStyle: "none",
-    }, // Rectangle
-    draggable: false, // Prevent node dragging
-  },
-  {
-    id: "+2",
-    position: { x: 325, y: 160 },
-    data: { label: "+" },
-    style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
-    draggable: false, // Prevent node dragging
-  },
+  // {
+  //   id: "ff",
+  //   position: { x: 370, y: 280 },
+  //   data: { label: "FF" },
+  //   style: {
+  //     backgroundColor: "#2b2b30",
+  //     color: "white",
+  //     whiteSpace: "pre-wrap",
+  //     display: "flex",
+  //     justifyContent: "center",
+  //     alignItems: "center",
+  //     textAlign: "center",
+  //     borderRadius: "100px",
+  //     padding: "20px",
+  //   }, // Rectangle
+  //   draggable: false, // Prevent node dragging
+  // },
+  // {
+  //   id: "+",
+  //   position: { x: 470, y: 160 },
+  //   data: { label: "+" },
+  //   style: {
+  //     color: "#2b2b30",
+  //     borderStyle: "none",
+  //   }, // Rectangle
+  //   draggable: false, // Prevent node dragging
+  // },
+  // {
+  //   id: "+2",
+  //   position: { x: 325, y: 160 },
+  //   data: { label: "+" },
+  //   style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
+  //   draggable: false, // Prevent node dragging
+  // },
 ]);
 
 const edges = ref([
@@ -214,14 +219,26 @@ const edges = ref([
     target: "atmospheric-inversion",
     type: "smoothstep",
     animated: true,
+    markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 20, // Adjust the width of the arrow
+          height: 20, // Adjust the height of the arrow
+          color: 'black',
+        },
     style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
   },
   {
     id: "e3",
-    source: "atmospheric-inversion2",
-    target: "fossil-emissions",
+    target: "atmospheric-inversion2",
+    source: "fossil-emissions",
     type: "smoothstep",
     animated: true,
+    markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 20, // Adjust the width of the arrow
+          height: 20, // Adjust the height of the arrow
+          color: 'black',
+        },
     style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
 
   },
@@ -232,7 +249,12 @@ const edges = ref([
     type: "smoothstep",
     animated: true,
     style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
-
+    markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 20, // Adjust the width of the arrow
+          height: 20, // Adjust the height of the arrow
+          color: 'black',
+        },
   },
   {
     id: "e5",
@@ -241,7 +263,12 @@ const edges = ref([
     type: "smoothstep",
     animated: true,
     style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
-
+    markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 20, // Adjust the width of the arrow
+          height: 20, // Adjust the height of the arrow
+          color: 'black',
+        },
   },
   {
     id: "e6",
@@ -250,7 +277,12 @@ const edges = ref([
     type: "smoothstep",
     animated: true,
     style: { stroke: "#575759", strokeWidth: 1 },  // Thicker stroke
-
+    markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 20, // Adjust the width of the arrow
+          height: 20, // Adjust the height of the arrow
+          color: 'black',
+        },
   },
   {
     id: "e7",
@@ -286,7 +318,7 @@ const edges = ref([
 
 <style scoped>
 .flowchart-container {
-  height: 450px; /* Set the fixed height */
+  height: 300px; /* Set the fixed height */
   background-color: #ffffff;
   /* border: 2px solid #4d4d4d;
   border-radius: 15px;

@@ -5,9 +5,7 @@
       <div>
         <h2>Welcome to Near Real-time Carbon Budget Project</h2>
         <p class="text-overline">
-          We reveals a large <b><u>DECLINE</u></b> of the land carbon sink
-          <b><u>in 2023</u></b
-          >.
+          A LARGE DECLINE OF THE LAND CARBON SINK IN 2023
         </p>
         <br />
         <p>

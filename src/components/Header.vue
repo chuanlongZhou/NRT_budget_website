@@ -36,7 +36,7 @@
       class="font-weight-black text-h6 text-primary ml-10"
       to="/about"
     >
-      ABOUT TEAM
+      TEAM
     </v-btn>
 
     <v-spacer></v-spacer>

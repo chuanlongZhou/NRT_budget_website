@@ -1,5 +1,4 @@
 <template>
-
   <v-container class="main_app mt-10" width="80%">
     <!-- <p class="text-start text-h4 text-uppercase">Low latency carbon budget analysis reveals a large decline of the land carbon sink in 2023</p> -->
     <!-- Sections -->
@@ -31,7 +30,7 @@
       </v-col>
     </v-row>
     <section id="introduction" class="my-5 section-offset">
-      <p >
+      <p>
         Two independent and complementary approaches are used to estimate the
         global CO2 budget and the regional distribution of emissions and natural
         CO2 sinks:
@@ -40,34 +39,34 @@
 
       <v-row height="530px">
         <v-col cols="6" lg="6" md="12" sm="12" xs="12">
-          <u><b>1. Top-down approach </b></u>
-         is based on near real time fossil CO2
-        emissions based on activity data from
-        <a href="https://carbonmonitor.org/" target="_blank"> Carbon Monitor </a
-        >, atmospheric CO2 monthly increase from the
-        <a
-          href="https://www.noaa.gov/media-release/noaa-partners-with-scripps-institution-of-oceanography-on-unmanned-systems"
-          target="_blank"
-        >
-          NOAA and SCRIPPS network
-        </a>
-        , and process-based land carbon models integrated with the latest
-        climate data as input, and AI-empowered emulators of ocean carbon
-        models. The land and ocean carbon models used here are contributing to
-        in the annual Global Budget assessment and have been extensively
-        validated.
+          <u><b>1. Top-down carbon budget </b></u>
+
+          is based on satellite measurements of atmospheric CO2 concentration
+          with global coverage by the
+          <a href="https://ocov2.jpl.nasa.gov/" target="_blank">
+            OCO2 satellite of NASA
+          </a>
+          using an atmospheric inversion model to translate these measurements
+          into maps of CO2 fluxes over land and oceans. The inversion model uses
+          as input fossil CO2 emissions and the latest wind fields.
           <FlowchartA class="mt-3" />
         </v-col>
         <v-col cols="6" lg="6" md="12" sm="12" xs="12">
-          <u><b>2. Bottom-up approach</b></u>
-          is based on satellite measurements of
-        CO2 in the atmosphere with global coverage by the
-        <a href="https://ocov2.jpl.nasa.gov/" target="_blank">
-          OCO2 satellite of NASA
-        </a>
-        using an atmospheric inversion to translate these measurements into
-        fluxes. It uses as input fossil CO2 emissions and the latest wind fields
-        to provide time varying maps of land and ocean CO2 fluxes
+          <u><b>2. Bottom-up carbon budget</b></u>
+          is based on near real time fossil CO2 emissions based on activity data
+          from
+          <a href="https://carbonmonitor.org/" target="_blank">
+            Carbon Monitor</a
+          >, atmospheric CO2 monthly data from the
+          <a
+            href="https://www.noaa.gov/media-release/noaa-partners-with-scripps-institution-of-oceanography-on-unmanned-systems"
+            target="_blank"
+          >
+            NOAA and SCRIPPS network</a
+          >, process-based land carbon models integrated with the latest climate
+          data as input, and AI-empowered emulators of land and ocean carbon
+          models. Those land and ocean carbon models are contributing to in the
+          annual Global Budget assessment and have been extensively validated.
           <FlowchartB class="mt-3" />
         </v-col>
       </v-row>
@@ -162,7 +161,6 @@
       <h2>Ocean Carbon Flux</h2>
       <Ocean />
     </section>
-    
   </v-container>
 </template>
 
