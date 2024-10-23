@@ -62,7 +62,9 @@
             href="https://www.noaa.gov/media-release/noaa-partners-with-scripps-institution-of-oceanography-on-unmanned-systems"
             target="_blank"
           >
-            NOAA and SCRIPPS network</a
+            NOAA and SCRIPPS network
+            
+            </a
           >, process-based land carbon models integrated with the latest climate
           data as input, and AI-empowered emulators of land and ocean carbon
           models. Those land and ocean carbon models are contributing to in the

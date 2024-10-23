@@ -48,7 +48,7 @@ import "@vue-flow/core/dist/style.css"; // Vue Flow core styles
 const nodes = ref([
   {
     id: "fossil-emissions",
-    position: { x: 25, y: 150+15 },
+    position: { x: 25, y: 160 },
     data: { label: "Fossil Emissions \nEstimates" },
     style: {
       backgroundColor: "gray",
@@ -60,6 +60,8 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
     sourcePosition: Position.Top,
@@ -67,27 +69,38 @@ const nodes = ref([
   
   {
     id: "n5",
-    position: { x: 40+50, y: 40 },
+    position: { x: 40+50, y: 50 },
     data: { label: "Land Models" },
     style: {
-      backgroundColor: "#16a124",
+      backgroundColor: "#92D050",
       whiteSpace: "pre-wrap",
+      borderWidth: "3px",
+
+      borderColor: "#548235",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
     targetPosition: Position.Left,
   },
   {
+    id: "n52",
+    position: { x: 40+50, y: 50 },
+    draggable: false, // Prevent node dragging
+    sourcePosition: Position.Right,
+  },
+  {
     id: "n6",
-    position: { x: 250, y: 25 },
+    position: { x: 275, y: 50 },
     data: { label: "Land AI models \n(emulators)" },
     style: {
-      backgroundColor: "#16a124",
+      backgroundColor: "#92D050",
       borderColor: "#a12fba",
       borderWidth: "3px",
       whiteSpace: "pre-wrap",
@@ -97,15 +110,18 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
+    targetPosition: Position.Left,
   },
   {
     id: "n7",
-    position: { x: 350+100, y: 25 },
+    position: { x: 350+100, y: 50 },
     data: { label: "Ocean AI models \n(emulators)" },
     style: {
-      backgroundColor: "#0c127d",
+      backgroundColor: "#4472C4",
       color: "white",
       borderColor: "#a12fba",
       borderWidth: "3px",
@@ -116,6 +132,8 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
@@ -129,7 +147,7 @@ const nodes = ref([
   },
   {
     id: "land-sink",
-    position: { x: 50+175-25, y: 150+25 },
+    position: { x: 195, y: 160 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -140,12 +158,14 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "ocean-sink",
-    position: { x: 200+175-25-20, y: 150+25 },
+    position: { x: 365, y: 160 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -157,13 +177,15 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "co2-growth-rate",
-    position: { x: 350+175-25-40, y: 150+10 },
-    data: { label: "CO2 growth rate \nfrom NOAA and SCRIPPS \nsurface stations" },
+    position: { x: 550-15, y: 160 },
+    data: { label: "Atmospheric CO₂\n Growth Rate from\n NOAA and SCRIPPS stations" },
     style: {
       backgroundColor: "#5eabe6",
       color: "white",
@@ -173,7 +195,10 @@ const nodes = ref([
       alignItems: "center",
       textAlign: "center",
       borderRadius: "5px",
-      padding: "10px",
+      padding: "1px",
+      width: '160px',
+      height: '60px',
+      fontSize: "11px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
@@ -197,7 +222,7 @@ const nodes = ref([
   // },
   {
     id: "+",
-    position: { x: 165+175-25-10, y: 150+30 },
+    position: { x: 375-20, y: 150+30 },
     data: { label: "+" },
     style: {
       color: "#2b2b30",
@@ -207,21 +232,21 @@ const nodes = ref([
   },
   {
     id: "+2",
-    position: { x: 320+175-25-30, y: 150+30 },
+    position: { x: 550-25, y: 150+30 },
     data: { label: "+" },
     style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "+3",
-    position: { x: 320+175-25-30+230, y: 150+30 },
+    position: { x: 550+145, y: 150+30 },
     data: { label: "+" },
     style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "=",
-    position: { x: 205-25, y: 150+30 },
+    position: { x: 200-15, y: 150+30 },
     data: { label: "=" },
     style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
     draggable: false, // Prevent node dragging
@@ -235,7 +260,7 @@ const nodes = ref([
   // },
   {
     id: "+4",
-    position: { x: 320+175-25-30+220, y:150+5 },
+    position: { x: 550+135, y:155 },
     data: { label: "Budget \nImbalance" },
     style: {
       color: "#2b2b30",
@@ -247,6 +272,7 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "100px",
       padding: "20px",
+      fontSize: "12px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
@@ -264,10 +290,16 @@ const edges = ref([
 
   {
     id: "e1",
-    source: "n1",
-    target: "n5",
+    source: "n52",
+    target: "n6",
     type: "smoothstep",
     animated: true,
+    markerEnd: {
+          type: MarkerType.ArrowClosed,
+          width: 20, // Adjust the width of the arrow
+          height: 20, // Adjust the height of the arrow
+          color: 'black',
+        },
     style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
   },
   {

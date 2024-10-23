@@ -2,32 +2,42 @@
   <v-footer padless height="300px">
     <v-col align="center" cols="6">
       <img
-      src="@/assets/logos/ipsl.png"
-      alt="Calipso Dark Icon"
-      height="60"
-      class="mx-4"
-    />
-    <img
-      src="@/assets/logos/log1.png"
-      alt="Calipso Dark Icon"
-      height="60"
-      class="mx-4"
-    />
-    <img
-      src="@/assets/logos/university-of-exeter-dark.svg"
-      alt="Calipso Dark Icon"
-      height="60"
-      class="mx-4"
-    />
-
-
+        src="@/assets/logos/ipsl.png"
+        alt="Calipso Dark Icon"
+        height="60"
+        class="mx-4"
+      />
+      <img
+        src="@/assets/logos/university-of-exeter-dark.svg"
+        alt="Calipso Dark Icon"
+        height="60"
+        class="mx-4"
+      />
+      <img
+        src="@/assets/logos/log1.png"
+        alt="Calipso Dark Icon"
+        height="60"
+        class="mx-4"
+      />
+      <img
+        src="@/assets/team_logo/Microsoft-logo_rgb_c-wht 1.png"
+        alt="Calipso Dark Icon"
+        height="60"
+        class="mx-4"
+      />
     </v-col>
     <v-col class="text-center" cols="6">
-      <p>PAPER LINK</p>
-      <p> ...</p>
-      
+      <p>
+        <a
+          href="https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwae365/7831649?searchresult=1"
+          target="_blank"
+        >
+          PAPER LINK
+        </a>
+      </p>
+
       <p>Other information</p>
-      <p> ... </p>
+      <p>...</p>
 
       <span>Website created by</span>
       <a

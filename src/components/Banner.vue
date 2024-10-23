@@ -6,6 +6,12 @@
         <h2>Welcome to Near Real-time Carbon Budget Project</h2>
         <p class="text-overline">
           A LARGE DECLINE OF THE LAND CARBON SINK IN 2023
+          <a
+          href="https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwae365/7831649?searchresult=1"
+          target="_blank"
+        >
+          OUR PAPER
+        </a>
         </p>
         <br />
         <p>

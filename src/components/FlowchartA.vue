@@ -6,35 +6,9 @@
     :zoom-on-scroll="false"
     :zoom-on-pinching="false"
     :pan-on-drag="false"
-    :fit-view="true"
+    :fit-view="false"
+    :node-types="nodeTypes"
   >
-    <!-- <Background pattern-color="#aaa" :gap="16" /> -->
-    <defs>
-      <!-- Define marker for the end of the edge -->
-      <marker
-        id="end-arrow"
-        viewBox="0 0 10 10"
-        refX="10"
-        refY="5"
-        markerWidth="6"
-        markerHeight="6"
-        orient="auto"
-      >
-        <path d="M0,0 L10,5 L0,10 Z" fill="#ff5722" />
-      </marker>
-
-      <!-- Define marker for the start of the edge (optional) -->
-      <marker
-        id="start-circle"
-        viewBox="0 0 10 10"
-        refX="5"
-        refY="5"
-        markerWidth="5"
-        markerHeight="5"
-      >
-        <circle cx="5" cy="5" r="3" fill="#ff5722" />
-      </marker>
-    </defs>
   </vue-flow>
 </template>
 
@@ -49,7 +23,7 @@ const nodes = ref([
   {
     id: "oco2",
     type: "input",
-    position: { x: 550, y: 64},
+    position: { x: 475, y: 50},
     data: { label: "OCO2 Satellite Data" },
     class: "custom-node",
     style: {
@@ -62,6 +36,8 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
     sourcePosition: Position.Left,
@@ -70,7 +46,7 @@ const nodes = ref([
 
   {
     id: "fossil-emissions",
-    position: { x: 50, y: 150 },
+    position: { x: 25, y: 160 },
     data: { label: "Fossil Emissions \nEstimates" },
     style: {
       backgroundColor: "gray",
@@ -82,18 +58,20 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
     sourcePosition: Position.Top,
   },
   {
     id: "atmospheric-inversion",
-    position: { x: 260, y: 50 },
-    data: { label: "Atmospheric Inversion \nModel" },
+    position: { x: 285, y: 50 },
+    data: { label: "Atmospheric \nInversion Model" },
     style: {
       backgroundColor: "#ff5722",
       color: "white",
-      borderColor: "#a13203",
+      borderColor: "#172C51",
       borderWidth: "3px",
 
       whiteSpace: "pre-wrap",
@@ -103,13 +81,15 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
     targetPosition: Position.Right,
   },
   {
     id: "atmospheric-inversion2",
-    position: { x: 260, y: 75 },
+    position: { x: 285, y: 75 },
     data: { label: "" },
     style: { backgroundColor: "lightblue" }, // Rectangle
     draggable: false, // Prevent node dragging
@@ -117,7 +97,7 @@ const nodes = ref([
   },
   {
     id: "land-sink",
-    position: { x: 220, y: 200 },
+    position: { x: 200, y: 160 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -128,12 +108,15 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
+      color: "white",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "ocean-sink",
-    position: { x: 350, y: 200 },
+    position: { x: 375, y: 160 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -145,13 +128,15 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "co2-growth-rate",
-    position: { x: 500, y: 200 },
-    data: { label: "CO2 Growth Rate\n from satellite data" },
+    position: { x: 550, y: 160 },
+    data: { label: "Atmospheric CO₂ \nGrowth Rate\n from OCO-2 data" },
     style: {
       backgroundColor: "#5eabe6",
       color:"white",
@@ -162,6 +147,9 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
+      width: '160px',
+      height: '60px',
+      fontSize: "12px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
@@ -323,5 +311,14 @@ const edges = ref([
   /* border: 2px solid #4d4d4d;
   border-radius: 15px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.518); */
+}
+
+.custom-node {
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.custom-node:hover {
+  background-color: #f0f0f0; /* Change the color when hovered */
+  transform: scale(1.05); /* Slightly enlarge the node */
 }
 </style>

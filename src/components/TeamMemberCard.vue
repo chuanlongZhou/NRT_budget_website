@@ -4,12 +4,12 @@
         <v-card
           class="mx-auto my-4 pa-5"
           max-width="600"
-          min-height="300"
+          min-height="350"
           outlined
           hover
           v-bind="props"
-          :rounded="isHovering? 'xl' : 'lg'"
-          :color="isHovering ? 'light' : 'white'"
+          rounded="lg"
+          :color="isHovering ? 'primary' : 'white'"
         >
           <v-row>
             <v-col cols="4" class="px-5 mb-3">
@@ -49,6 +49,7 @@
           <v-divider></v-divider>
           <v-card-text 
           :class="isHovering ? 'text-body-1' : 'text-body-2'"
+          class="preserve-line-breaks"
           >
             {{ description }}
           </v-card-text>
@@ -86,11 +87,11 @@
   }
   
   .v-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease color 0.2s ease;
   }
   
-  .v-card:hover {
-    transform: scale(1.05);
-  }
+  .preserve-line-breaks {
+  white-space: pre-line;
+}
   </style>
     

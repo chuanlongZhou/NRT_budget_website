@@ -47,7 +47,7 @@
         </v-row>
         <v-row v-if="toggle.length > 0">
           <v-col col="6">
-            DVGM -{{ regions[toggle[0]].title }}
+            DGVM -{{ regions[toggle[0]].title }}
             <v-img
               class="image py-5"
               :src="regions[toggle[0]].scr_1"
@@ -65,7 +65,7 @@
         </v-row>
         <v-row v-if="toggle.length > 1">
           <v-col col="6">
-            DVGM -{{ regions[toggle[1]].title }}
+            DGVM -{{ regions[toggle[1]].title }}
             <v-img
               class="image py-5"
               :src="regions[toggle[1]].scr_1"

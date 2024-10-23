@@ -10,16 +10,117 @@
       "scholarUrl": "https://scholar.google.com/citations?hl=en&user=PJhqfAoAAAAJ",
       "githubUrl": ""
     },
+
+    {
+      "name": "Frederic Chevallier",
+      "title": "Senior Researcher",
+      "institute":"LSCE",
+      "description": "Frédéric is a senior researcher at LSCE, internationally-recognized expert of atmospheric inversion. He has been coordinating the inversion activities of the European Copernicus Atmosphere Monitoring Service both in its pre-operational (since 2009) and operational (since 2015) phases. He is the author of over 250 peer-reviewed publications and of a patent on parallel computing.",
+      "photo": "Frédéric_lsce.jpg",
+      "email": "frederic.chevallier@lsce.ipsl.fr",
+      "homeUrl": "",
+      "scholarUrl": "",
+      "githubUrl": ""
+    },
+
     {
       "name": "Chuanlong Zhou",
-      "title": "Web Designer & Developer",
+      "title": "Research scientist",
       "institute":"LSCE",
-      "description": "Research scientist at LSCE with an interdisciplinary background in engineering, environmental science, and computer science. Passionate about integrating environmental science, data science, machine learning, and web technology to address both scientific and real-world challenges. ",
+      "description": "Research scientist at LSCE with an interdisciplinary background in engineering, environmental science, and computer science. Passionate about integrating environmental science, data science, machine learning, and web technology to address both scientific and real-world challenges. \nHe designed and developed this website.",
       "photo": "chuanlong_zhou.png",
       "email": "chuanlong.zhou@lsce.ipsl.fr",
       "homeUrl": "https://defve1988.github.io/",
       "scholarUrl": "https://scholar.google.com/citations?hl=en&user=I1xZXuEAAAAJ",
       "githubUrl": "https://github.com/chuanlongZhou"
+    },
+    {
+      "name": "Stephen Sitch",
+      "title": "Professor",
+      "institute":"Exeter",
+      "description": "Stephen is a Professor, Chair in Climate Change, at UNEXE. Leads the international land carbon model intercomparison (TRENDY) that delivers annually to the Global Carbon Budget. He has an H-index of 102 (cited 58,000 times). He is a Thomson Reuters highly cited researcher in geosciences in 2017 and 2019-23, ranked 14 in the Reuters hot list of world’s top climate scientists. ",
+      "photo": "Stephen_Sitch.jpg",
+      "email": "",
+      "homeUrl": "",
+      "scholarUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "name": "Mike O'Sullivan",
+      "title": "Lecturer",
+      "institute":"Exeter",
+      "description": "Mike is a lecturer of Mathematics at UNEXE. He is an early-career researcher and focuses his work on developing a deeper understanding of the terrestrial carbon cycle and its coupling with environmental change. He is one of the coordinators of the Global Carbon Budget report. He has a h-index of 23 (cited 9,000 times; Google Scholar, Oct 2024).",
+      "photo": "Mike O'Sullivan.jpg",
+      "email": "",
+      "homeUrl": "",
+      "scholarUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "name": "Pierre Friedlingstein",
+      "title": "Professor",
+      "institute":"Exeter",
+      "description": "Pierre is a fellow of the Royal Society, Professor, Chair in Mathematical Modelling of the Climate System at UNEXE. He pioneered research on climate and carbon cycle feedbacks and leads the Global Carbon Budget and heads the GCB Office at UNEXE. He has an H-index of 111 (cited 64,000 times). He has been a Thomson Reuters highly cited researcher every year since 2014 and was ranked 3rd in the Reuters list of the world's top climate scientists in 2021. ",
+      "photo": "Pierre Friedlingstein.jpg",
+      "email": "",
+      "homeUrl": "",
+      "scholarUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "name": "Jefferson Goncalves De Souza",
+      "title": "Computer Support Technologist",
+      "institute":"Exeter",
+      "description": "Computer Support Technologist at UNEXE with an interdisciplinary background in applied computing and Earth System Science. Passionate about integrating environmental, data and computer sciences, to operationalize procedures to optimally address key scientific challenges.",
+      "photo": "Jefferson Goncalves De Souza.jpg",
+      "email": "",
+      "homeUrl": "",
+      "scholarUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "name": "Piyu Ke",
+      "title": "PhD Candidate",
+      "institute":"Tsinghua",
+      "description": "Piyu Ke is pursuing a joint PhD at Tsinghua University and University of Exeter. His research focuses on developing low-latency carbon budget systems and overseeing their regular updates. Piyu is also dedicated to advancing near-real-time monitoring of global land and ocean carbon sinks through AI-driven technologies, with the goal of improving the accuracy and timeliness of carbon cycle assessments.",
+      "photo": "Piyu Ke.jpg",
+      "email": "",
+      "homeUrl": "",
+      "scholarUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "name": "Zhu Liu",
+      "title": "Professor",
+      "institute":"Tsinghua",
+      "description": "Professor Zhu Liu is a Tenured Professor and Principal Investigator at the Department of Earth System Science, Tsinghua University. His research provides the near-real time assessments of the human impacts on the earth system, particularly the greenhouse gas budget. Dr. Liu is the co-leader of Carbon Monitor which is an international initiative that provides for the first time regularly updated, science-based estimates of daily CO2 emissions.",
+      "photo": "liu_zhu.jpg",
+      "email": "",
+      "homeUrl": "",
+      "scholarUrl": "",
+      "githubUrl": ""
+    },
+    {
+      "name": "Xiaofan Gui",
+      "title": "Applied scientist",
+      "institute":"Microsoft Research",
+      "description": "Applied scientist at Microsoft Research Asia. She specializes in advanced spatio-temporal series forecasting and is dedicated to driving innovation and practical applications across various real-world domains. Her expertise spans predictive modeling in critical areas such as carbon budget, battery technology, water research, wind energy, and healthcare. ",
+      "photo": "xiaofangui.jpg",
+      "email": "xiaofangui@microsoft.com",
+      "homeUrl": "https://www.microsoft.com/en-us/research/people/xiaofangui/",
+      "scholarUrl": "https://scholar.google.com/citations?user=N-vcOT0AAAAJ&hl=zh-CN",
+      "githubUrl": ""
+    },
+    {
+      "name": "Jiang Bian",
+      "title": "Senior Principal Research Manager",
+      "institute":"Microsoft Research",
+      "description": "Jiang Bian, Senior principal research manager at Microsoft Research Asia. He leads the Machine Learning Group and the Industry Innovation Center at Microsoft Research Asia. His team’s research spans deep learning, reinforcement learning, and GenAI, with a focus on cutting-edge applications of AI in vertical domains such as finance, energy, logistics, manufacturing, healthcare, and sustainable development. ",
+      "photo": "jiangbian.jpg",
+      "email": "jiabia@microsoft.com",
+      "homeUrl": "https://www.microsoft.com/en-us/research/people/jiabia/",
+      "scholarUrl": "https://scholar.google.com/citations?user=pZBEnY8AAAAJ&hl=zh-CN",
+      "githubUrl": ""
     }
   ]
   
