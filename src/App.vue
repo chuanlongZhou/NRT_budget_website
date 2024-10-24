@@ -20,25 +20,25 @@ const items = ref([
     text: "Concepts",
     value: "concepts",
     icon: "mdi-sitemap",
-    href: "#introduction",
+    href: "introduction",
   },
   {
     text: "Global Budget",
     value: "global-carbon-budget",
     icon: "mdi-earth",
-    href: "#section1",
+    href: "section1",
   },
   {
     text: "Land Flux",
     value: "land-carbon-flux",
     icon: "mdi-tree",
-    href: "#section2",
+    href: "section2",
   },
   {
     text: "Ocean Flux",
     value: "ocean-carbon-flux",
     icon: "mdi-waves",
-    href: "#section3",
+    href: "section3",
   },
 ]);
 </script>

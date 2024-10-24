@@ -2,7 +2,7 @@
   <v-container class="main_app mt-10" width="80%">
     <!-- <p class="text-start text-h4 text-uppercase">Low latency carbon budget analysis reveals a large decline of the land carbon sink in 2023</p> -->
     <!-- Sections -->
-    Need Some icons here
+    <!-- Need Some icons here
     <v-row>
       <v-col align="center">
         <img
@@ -28,31 +28,44 @@
           class="mx-4"
         />
       </v-col>
-    </v-row>
+    </v-row> -->
     <section id="introduction" class="my-5 section-offset">
       <p>
         Two independent and complementary approaches are used to estimate the
         global CO2 budget and the regional distribution of emissions and natural
-        CO2 sinks:
+        CO2 sinks. The two approaches are very consistent globally and they show
+        similar anomalies at the regional level, but we see more contrasted flux
+        anomalies in the inversion.
       </p>
       <br />
 
-      <v-row height="530px">
-        <v-col cols="6" lg="6" md="12" sm="12" xs="12">
-          <u><b>1. Top-down carbon budget </b></u>
+      <v-row height="530px" justify="center" align="center">
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+        <v-col cols="6" lg="5" md="12" sm="12" xs="12" class="content_text">
+          <u><b>Top-down carbon budget </b></u>
 
-          is based on satellite measurements of atmospheric CO2 concentration
-          with global coverage by the
+          is based on satellite observations of atmospheric column averaged CO2
+          concentration with global coverage by the
           <a href="https://ocov2.jpl.nasa.gov/" target="_blank">
             OCO2 satellite of NASA
           </a>
-          using an atmospheric inversion model to translate these measurements
-          into maps of CO2 fluxes over land and oceans. The inversion model uses
-          as input fossil CO2 emissions and the latest wind fields.
-          <FlowchartA class="mt-3" />
+          using an atmospheric
+          <a href="https://atmosphere.copernicus.eu/" target="_blank">
+            inversion model
+          </a>
+          to translate these observations into weekly maps of CO2 fluxes over
+          land and oceans. The inversion model uses as input fossil CO2
+          emissions and the latest wind fields for the year considered.
         </v-col>
         <v-col cols="6" lg="6" md="12" sm="12" xs="12">
-          <u><b>2. Bottom-up carbon budget</b></u>
+          <FlowchartA class="mt-3" />
+        </v-col>
+      </v-row>
+
+      <v-row height="530px" justify="center" align="center">
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+        <v-col cols="6" lg="5" md="12" sm="12" xs="12" class="content_text">
+          <u><b>Bottom-up carbon budget</b></u>
           is based on near real time fossil CO2 emissions based on activity data
           from
           <a href="https://carbonmonitor.org/" target="_blank">
@@ -62,38 +75,36 @@
             href="https://www.noaa.gov/media-release/noaa-partners-with-scripps-institution-of-oceanography-on-unmanned-systems"
             target="_blank"
           >
-            NOAA and SCRIPPS network
-            
-            </a
+            NOAA and SCRIPPS network </a
           >, process-based land carbon models integrated with the latest climate
           data as input, and AI-empowered emulators of land and ocean carbon
           models. Those land and ocean carbon models are contributing to in the
           annual Global Budget assessment and have been extensively validated.
+        </v-col>
+        <v-col cols="6" lg="6" md="12" sm="12" xs="12">
           <FlowchartB class="mt-3" />
         </v-col>
       </v-row>
-
-      <p>
-        The two approaches are very consistent globally and they show similar
-        anomalies at the regional level, but we see more contrasted flux
-        anomalies in the inversion.
-      </p>
     </section>
 
     <v-divider></v-divider>
+
     <section id="section1" class="my-5 section-offset">
       <h2>Global Carbon Budget</h2>
       <v-row justify="center" align="center">
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
         <v-col cols="6">
           <p class="content_text">
             Here we see the global growth rate of atmospheric CO2 seen from
             surface marine stations from NOAA and from the Mauna Loa observatory
             from NOAA and SCRIPPS, the longest atmospheric record. The year 2003
             shows a record high growth rate at Mauna Loa and a very high growth
-            rate at the marine stations. →
+            rate at the marine stations.
           </p>
         </v-col>
-        <v-col cols="6">
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+
+        <v-col lg="6" md="6" sm="12" xs="12">
           <v-img
             class="image py-1"
             src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/main_1.png?raw=true"
@@ -101,26 +112,34 @@
           ></v-img>
         </v-col>
       </v-row>
-      <v-row justify="left" align="top">
-        <v-col cols="4">
+
+      <v-row justify="center" align="center">
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+        <v-col cols="6">
+          <p class="content_text">
+            Here we see the global budget, showing the fate of carbon from
+            fossil CO2 emissions which stays in the atmosphere and makes the
+            atmospheric growth rate (blue), or is absorbed by the land (green)
+            or the ocean reservoirs (blue-green). The bottom up budget is the
+            large bar. The top down inversion budget is he inside bar.
+          </p>
+        </v-col>
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+
+        <v-col lg="6" md="6" sm="12" xs="12">
           <v-img
             class="image py-5"
             src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/main_2.png?raw=true"
             width="450"
           ></v-img>
         </v-col>
-        <v-col cols="8">
-          <p class="content_text">
-            ← Here we see the global budget, showing the fate of carbon from
-            fossil CO2 emissions which stays in the atmosphere and makes the
-            atmospheric growth rate (blue), or is absorbed by the land (green)
-            or the ocean reservoirs (blue-green). The bottom up budget is the
-            large bar. The top down inversion budget is he inside bar.
-          </p>
-
+      </v-row>
+      <v-row justify="center" align="center">
+        <v-col lg="6" md="6" sm="12" xs="12">
           <v-expansion-panels class="mt-10" color="primary">
             <v-expansion-panel
               title="Global Map of the CO2 fluxes anomalies in 2023"
+              class="content_text"
             >
               <v-expansion-panel-text>
                 <p class="content_text">
@@ -153,6 +172,7 @@
     </section>
 
     <v-divider></v-divider>
+
     <section id="section2" class="my-5 section-offset">
       <h2>Land Carbon Flux</h2>
       <Land />
@@ -194,9 +214,9 @@ const slides = ref([
 ]);
 </script>
 
-<style>
+<style scoped>
 .content_text {
-  font-size: 16;
+  font-size: 18px;
   font-weight: light;
   color: #4d4d4d;
 }
@@ -210,7 +230,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.section-offset {
+.section-offset_not_used {
   position: relative;
   padding-top: 120px; /* Adjust this value according to the size of your app bar or header */
   margin-top: -60px; /* Use negative margin to pull the section back */
@@ -242,5 +262,10 @@ html {
   /* Visible state: original position and fully opaque */
   transform: translateX(0);
   opacity: 1;
+}
+p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #4d4d4d;
 }
 </style>

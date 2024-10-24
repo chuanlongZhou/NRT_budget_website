@@ -1,89 +1,95 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col cols="4">
-        You can select two regions to compare.
-        <v-img
-          class="image py-5"
-          src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land_map.png?raw=true"
-          width="500"
-        ></v-img>
-        <p class="content_text">
-          The 2003 anomaly from the low latency Dynamic vegetation models is
-          shown in red. The color bars show the range and density of the 15
-          Dynamic vegetation models used by the Global Carbon Project up to 2022
-          (darker green colors mean more models predict this value). Red bars
-          are the median from the 15 models of the Global Carbon Project. Black
-          dots show the average of the 3 models used for low latency estimates.
-          →
-        </p>
-      </v-col>
-      <v-col cols="8" class="pl-5">
-        <v-row>
-          <v-tooltip text="Select/unselect another region for compare">
-            <template v-slot:activator="{ props }">
-              <v-btn-toggle
-                v-model="toggle"
-                divided
-                max="2"
-                multiple
+  <v-row justify="center" align="center">
+    <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+    <v-col cols="6">
+      <p class="content_text">
+        The 2003 anomaly from the low latency Dynamic vegetation models is shown
+        in red. The color bars show the range and density of the 15 Dynamic
+        vegetation models used by the Global Carbon Project up to 2022 (darker
+        green colors mean more models predict this value). Red bars are the
+        median from the 15 models of the Global Carbon Project. Black dots show
+        the average of the 3 models used for low latency estimates.
+      </p>
+    </v-col>
+    <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+    <v-col lg="6" md="6" sm="12" xs="12">
+      <v-img
+        class="image py-5"
+        src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land_map.png?raw=true"
+        width="500"
+      ></v-img>
+    </v-col>
+
+    <v-col cols="10" class="pl-5 pt-10">
+      <v-row>
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+
+        <v-tooltip text="Select/unselect another region for compare" bottom>
+          <template v-slot:activator="{ props }">
+            <v-btn-toggle
+              v-model="toggle"
+              divided
+              max="2"
+              multiple
+              density="compact"
+              tooltip="top"
+              v-bind="props"
+            >
+              <v-btn
+                v-for="(region, i) in regions"
+                :key="i"
+                :value="i"
+                height="30px"
                 density="compact"
-                tooltip="top"
-                v-bind="props"
+                class="text-capitalize btn_toggle"
               >
-                <v-btn
-                  v-for="(region, i) in regions"
-                  :key="i"
-                  :value="i"
-                  height="30px"
-                  density="compact"
-                  class="text-capitalize btn_toggle px-0"
-                >
-                  {{ region.title }}
-                </v-btn>
-              </v-btn-toggle>
-            </template>
-          </v-tooltip>
-        </v-row>
-        <v-row v-if="toggle.length > 0">
-          <v-col col="6">
-            DGVM -{{ regions[toggle[0]].title }}
-            <v-img
-              class="image py-5"
-              :src="regions[toggle[0]].scr_1"
-              width="350"
-            ></v-img>
-          </v-col>
-          <v-col cols="6">
-            Inversion - {{ regions[toggle[0]].title }}
-            <v-img
-              class="image py-5"
-              :src="regions[toggle[0]].scr_2"
-              width="350"
-            ></v-img>
-          </v-col>
-        </v-row>
-        <v-row v-if="toggle.length > 1">
-          <v-col col="6">
-            DGVM -{{ regions[toggle[1]].title }}
-            <v-img
-              class="image py-5"
-              :src="regions[toggle[1]].scr_1"
-              width="350"
-            ></v-img>
-          </v-col>
-          <v-col cols="6">
-            Inversion - {{ regions[toggle[1]].title }}
-            <v-img
-              class="image py-5"
-              :src="regions[toggle[1]].scr_2"
-              width="350"
-            ></v-img>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+                {{ region.title }}
+              </v-btn>
+            </v-btn-toggle>
+          </template>
+        </v-tooltip>
+      </v-row>
+
+      <v-row v-if="toggle.length > 0">
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+        <v-col col="6">
+          DGVM -{{ regions[toggle[0]].title }}
+          <v-img
+            class="image py-5"
+            :src="regions[toggle[0]].scr_1"
+            width="350"
+          ></v-img>
+        </v-col>
+        <v-col cols="6">
+          Inversion - {{ regions[toggle[0]].title }}
+          <v-img
+            class="image py-5"
+            :src="regions[toggle[0]].scr_2"
+            width="350"
+          ></v-img>
+        </v-col>
+      </v-row>
+      <v-row v-if="toggle.length > 1">
+        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
+        <v-col col="6">
+          DGVM -{{ regions[toggle[1]].title }}
+          <v-img
+            class="image py-5"
+            :src="regions[toggle[1]].scr_1"
+            width="350"
+          ></v-img>
+        </v-col>
+        <v-col cols="6">
+          Inversion - {{ regions[toggle[1]].title }}
+          <v-img
+            class="image py-5"
+            :src="regions[toggle[1]].scr_2"
+            width="350"
+          ></v-img>
+        </v-col>
+      </v-row>
+    </v-col>
+  </v-row>
 </template>
 
 <script setup>
@@ -182,7 +188,7 @@ const regions = ref([
   border-color: #6b6b6b9f; */
 }
 .content_text {
-  font-size: 16;
+  font-size: 18px;
   font-weight: light;
   color: #4d4d4d;
 }

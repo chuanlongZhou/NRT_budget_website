@@ -11,29 +11,28 @@
     <v-toolbar-title
       class="text-primary"
       @click="goToHome"
-      style="cursor: pointer"
+      style="cursor: pointer; font-size: 32px"
     >
       NRT Carbon Budget
       <span class="v-subheader"> </span>
     </v-toolbar-title>
 
     <template v-for="(item, i) in items" :key="i">
-      <a :href="item.href" style="text-decoration: none; color: inherit">
-        <v-btn
-          variant="text"
-          color="black"
-          class="font-weight-black"
-          :disabled="!isHomePage"
-        >
-          {{ item.text }}
-        </v-btn>
-      </a>
+      <v-btn
+        variant="text"
+        color="black"
+        class="button-text"
+        :disabled="!isHomePage"
+        @click="navigateToTag(item.href, item.hash)"
+      >
+        {{ item.text }}
+      </v-btn>
     </template>
 
     <v-btn
       variant="text"
       color="black"
-      class="font-weight-black text-h6 text-primary ml-10"
+      class="font-weight-black text-h5 text-primary ml-4"
       to="/about"
     >
       TEAM
@@ -44,11 +43,11 @@
 </template>
   
   <script setup>
-import { ref, computed  } from "vue";
+import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 
 const router = useRouter();
-const isHomePage = computed(() => router.currentRoute.value.path  === '/');
+const isHomePage = computed(() => router.currentRoute.value.path === "/");
 console.log(router.currentRoute.value.path);
 console.log(isHomePage.value);
 
@@ -68,18 +67,17 @@ const props = defineProps({
   },
 });
 
+// note: use this to navigate to the page with the hash
 const navigateToTag = (path, hash) => {
-  // Navigate to the page
-  window.location.href = path;
-  console.log(window.location.href);
+  // Navigate to the page with the hash
 
-  // Scroll to the tag after a short delay
-  setTimeout(() => {
-    const element = document.querySelector(hash);
+  // Adjust the scroll position after the page has fully loaded
+    const element = document.getElementById(path);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // Scroll to the element and then adjust by 60px upwards
+      const topPosition = element.getBoundingClientRect().top + window.pageYOffset - 150;
+      window.scrollTo({ top: topPosition, behavior: 'smooth' });
     }
-  }, 100);
 };
 </script>
   
@@ -91,6 +89,11 @@ const navigateToTag = (path, hash) => {
 
 .v-subheader {
   font-size: 16px;
+}
+
+.button-text {
+  font-size: 20px;
+  font-weight: 500;
 }
 </style>
   
