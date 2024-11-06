@@ -39,8 +39,13 @@ const updateCanvasSize = () => {
     if (offsetWidth < 600) {
       fontSize1.value = 12;
       fontSize2.value = 10;
+      box_height.value = 75;
+    } else if (offsetWidth < 800) {
+      fontSize1.value = 12;
+      fontSize2.value = 10;
       box_height.value = 60;
-    } else {
+    } 
+    else {
       fontSize1.value = 16;
       fontSize2.value = 12;
     }
@@ -53,7 +58,7 @@ onMounted(() => {
   if (vueFlowRefA.value) {
     resizeObserver.observe(vueFlowRefA.value.$el); // Observe changes to the vue-flow element size
   }
-  updateCanvasSize(); // Initial size setup
+  // updateCanvasSize(); // Initial size setup
 });
 
 // Cleanup ResizeObserver on unmount

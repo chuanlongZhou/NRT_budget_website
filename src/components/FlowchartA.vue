@@ -36,15 +36,20 @@ const updateCanvasSize = () => {
     canvasWidth.value = offsetWidth;
     canvasHeight.value = offsetHeight;
     box_width.value = Math.min(offsetWidth * 0.2, 160);
-    console.log("Canvas size updated:", canvasWidth.value, canvasHeight.value);
     if (offsetWidth < 600) {
       fontSize1.value = 12;
       fontSize2.value = 10;
+      box_height.value = 75;
+    } else if (offsetWidth < 800) {
+      fontSize1.value = 12;
+      fontSize2.value = 10;
       box_height.value = 60;
-    } else {
+    } 
+    else {
       fontSize1.value = 16;
       fontSize2.value = 12;
     }
+    console.log("Canvas size updated:", canvasWidth.value, canvasHeight.value, box_width.value, box_height.value);
   }
 };
 
@@ -54,7 +59,7 @@ onMounted(() => {
   if (vueFlowRefA.value) {
     resizeObserver.observe(vueFlowRefA.value.$el); // Observe changes to the vue-flow element size
   }
-  updateCanvasSize(); // Initial size setup
+  // updateCanvasSize(); // Initial size setup
 });
 
 // Cleanup ResizeObserver on unmount
@@ -83,7 +88,7 @@ const computedNodes = computed(() => [
       borderRadius: "5px",
       padding: "10px",
       width: box_width.value + "px",
-      height: "60px",
+      height: box_height.value + "px",
       fontSize: `${fontSize1.value}px`,
     },
     draggable: false,
@@ -105,7 +110,7 @@ const computedNodes = computed(() => [
       borderRadius: "5px",
       padding: "10px",
       width: box_width.value + "px",
-      height: '60px',
+      height: box_height.value + "px",
       fontSize: `${fontSize1.value}px`,
 
     }, // Rectangle
@@ -130,7 +135,7 @@ const computedNodes = computed(() => [
       borderRadius: "5px",
       padding: "10px",
       width: box_width.value + "px",
-      height: '60px',
+      height: box_height.value + "px",
       fontSize: `${fontSize1.value}px`,
 
     }, // Rectangle
@@ -159,7 +164,7 @@ const computedNodes = computed(() => [
       borderRadius: "5px",
       padding: "10px",
       width: box_width.value + "px",
-      height: '60px',
+      height: box_height.value + "px",
       color: "white",
       fontSize: `${fontSize1.value}px`,
 
@@ -181,7 +186,7 @@ const computedNodes = computed(() => [
       borderRadius: "5px",
       padding: "10px",
       width: box_width.value + "px",
-      height: '60px',
+      height: box_height.value + "px",
       fontSize: `${fontSize1.value}px`,
 
     }, // Rectangle
@@ -202,7 +207,7 @@ const computedNodes = computed(() => [
       borderRadius: "5px",
       padding: "10px",
       width: box_width.value + "px",
-      height: '60px',
+      height: box_height.value + "px",
       fontSize: `${fontSize2.value}px`,
 
     }, // Rectangle

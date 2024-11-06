@@ -106,7 +106,7 @@
 
         <v-col cols="12" md="6" class="d-flex justify-center align-center">
           <v-img
-            class="image py-1"
+            class="image py-1 ml-10"
             src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/main_1.png?raw=true"
             width="400"
           ></v-img>
@@ -120,7 +120,7 @@
             fossil CO<sub>2</sub> emissions which stays in the atmosphere and
             makes the atmospheric growth rate (blue), or is absorbed by the land
             (green) or the ocean reservoirs (blue-green). The bottom up budget
-            is the large bar. The top down inversion budget is he inside bar.
+            is the large bar. The top-down inversion budget is he inside bar.
           </p>
         </v-col>
 
