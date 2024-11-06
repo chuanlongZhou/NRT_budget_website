@@ -15,7 +15,7 @@
     <v-col lg="6" md="6" sm="12" xs="12">
       <v-img
         class="image py-5"
-        src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land_map.png?raw=true"
+        src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land_map.png?raw=true"
         width="500"
       ></v-img>
     </v-col>
@@ -53,7 +53,7 @@
       <v-row v-if="toggle.length > 0">
         <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
         <v-col col="6">
-          DGVM -{{ regions[toggle[0]].title }}
+          Land Models - {{ regions[toggle[0]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[0]].scr_1"
@@ -61,7 +61,7 @@
           ></v-img>
         </v-col>
         <v-col cols="6">
-          Inversion - {{ regions[toggle[0]].title }}
+          Atmospheric Inversion - {{ regions[toggle[0]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[0]].scr_2"
@@ -72,7 +72,7 @@
       <v-row v-if="toggle.length > 1">
         <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
         <v-col col="6">
-          DGVM -{{ regions[toggle[1]].title }}
+          Land Models - {{ regions[toggle[1]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[1]].scr_1"
@@ -80,7 +80,7 @@
           ></v-img>
         </v-col>
         <v-col cols="6">
-          Inversion - {{ regions[toggle[1]].title }}
+          Atmospheric Inversion - {{ regions[toggle[1]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[1]].scr_2"
@@ -101,72 +101,72 @@ const regions = ref([
   {
     title: "Global",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_globe.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_Global.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_globe.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_Global.png?raw=true",
+  },
+  {
+    title: "Tropics",
+    scr_1:
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_Tropics.png?raw=true",
+    scr_2:
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_Tropics.png?raw=true",
   },
   {
     title: "East Asia",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_EA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_East_Asia.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_EA.png?raw=true",
-  },
-  {
-    title: "South Asia",
-    scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_SA.png?raw=true",
-    scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_SA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_East_Asia.png?raw=true",
   },
   {
     title: "South-East Asia",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_SEA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_Southeast_Asia.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_SEA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_Southeast_Asia.png?raw=true",
   },
   {
     title: "West Asia",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_WA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_West_Asia.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_WA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_West_Asia.png?raw=true",
   },
   {
     title: "Africa",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_AF.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_Africa.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_AF.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_Africa.png?raw=true",
   },
   {
     title: "Europe",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_EU.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_Europe.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_EU.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_Europe.png?raw=true",
   },
   {
     title: "Latin America",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_LA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_Latin_America.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_LA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_Latin_America.png?raw=true",
   },
   {
     title: "North America",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_NA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_North_America.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_NA.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_North_America.png?raw=true",
   },
   {
     title: "Oceania",
     scr_1:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/DGVM_box_OC.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Land_Models_Oceania.png?raw=true",
     scr_2:
-      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/land/inversion_box_OC.png?raw=true",
+      "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/land/Atmospheric_Inversion_Oceania.png?raw=true",
   },
 ]);
 </script>

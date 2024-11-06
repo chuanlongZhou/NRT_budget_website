@@ -1,7 +1,6 @@
 <template>
   <vue-flow
-    ref="vueFlowRefA"
-    :nodes="computedNodes"
+    :nodes="nodes"
     :edges="edges"
     class="flowchart-container"
     :zoom-on-scroll="false"
@@ -14,62 +13,17 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from "vue";
-import { Position, VueFlow, MarkerType} from "@vue-flow/core";
+import { ref } from "vue";
+import { Position, VueFlow, MarkerType } from "@vue-flow/core";
+import { Background } from "@vue-flow/background";
 import "@vue-flow/core/dist/style.css"; // Vue Flow core styles
 
-// References for canvas dimensions and Vue Flow element
-const vueFlowRefA = ref(null);
-const canvasWidth = ref(872);
-const canvasHeight = ref(300);
-const box_width = ref(160);
-const box_height = ref(50);
-const fontSize1 = ref(16);
-const fontSize2 = ref(12);
-
-// ResizeObserver to monitor vue-flow element size
-let resizeObserver;
-
-const updateCanvasSize = () => {
-  if (vueFlowRefA.value) {
-    const { offsetWidth, offsetHeight } = vueFlowRefA.value.$el; // Access actual DOM element size
-    canvasWidth.value = offsetWidth;
-    canvasHeight.value = offsetHeight;
-    box_width.value = Math.min(offsetWidth * 0.2, 160);
-    console.log("Canvas size updated:", canvasWidth.value, canvasHeight.value);
-    if (offsetWidth < 600) {
-      fontSize1.value = 12;
-      fontSize2.value = 10;
-      box_height.value = 60;
-    } else {
-      fontSize1.value = 16;
-      fontSize2.value = 12;
-    }
-  }
-};
-
-// Initialize the ResizeObserver on mount
-onMounted(() => {
-  resizeObserver = new ResizeObserver(updateCanvasSize);
-  if (vueFlowRefA.value) {
-    resizeObserver.observe(vueFlowRefA.value.$el); // Observe changes to the vue-flow element size
-  }
-  updateCanvasSize(); // Initial size setup
-});
-
-// Cleanup ResizeObserver on unmount
-onBeforeUnmount(() => {
-  if (resizeObserver && vueFlowRefA.value) {
-    resizeObserver.unobserve(vueFlowRefA.value.$el);
-  }
-});
-
-// Define computed nodes based on canvas size
-const computedNodes = computed(() => [
+// Define nodes and edges for the flowchart
+const nodes = ref([
   {
     id: "oco2",
     type: "input",
-    position: { x: canvasWidth.value *0.8, y: 50 },
+    position: { x: 475, y: 50},
     data: { label: "OCO2 Satellite Data" },
     class: "custom-node",
     style: {
@@ -82,17 +36,17 @@ const computedNodes = computed(() => [
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: box_width.value + "px",
-      height: "60px",
-      fontSize: `${fontSize1.value}px`,
-    },
-    draggable: false,
+      width: '160px',
+      height: '60px',
+    }, // Rectangle
+    draggable: false, // Prevent node dragging
     sourcePosition: Position.Left,
+
   },
-  
+
   {
     id: "fossil-emissions",
-    position: { x: canvasWidth.value *0.05, y: 160 },
+    position: { x: 25, y: 160 },
     data: { label: "Fossil Emissions \nEstimates" },
     style: {
       backgroundColor: "gray",
@@ -104,17 +58,15 @@ const computedNodes = computed(() => [
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: box_width.value + "px",
+      width: '160px',
       height: '60px',
-      fontSize: `${fontSize1.value}px`,
-
     }, // Rectangle
     draggable: false, // Prevent node dragging
     sourcePosition: Position.Top,
   },
   {
     id: "atmospheric-inversion",
-    position: { x: canvasWidth.value *0.4, y: 50 },
+    position: { x: 285, y: 50 },
     data: { label: "Atmospheric \nInversion Model" },
     style: {
       backgroundColor: "#ff5722",
@@ -129,17 +81,15 @@ const computedNodes = computed(() => [
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: box_width.value + "px",
+      width: '160px',
       height: '60px',
-      fontSize: `${fontSize1.value}px`,
-
     }, // Rectangle
     draggable: false, // Prevent node dragging
     targetPosition: Position.Right,
   },
   {
     id: "atmospheric-inversion2",
-    position: { x: canvasWidth.value *0.4, y: 75 },
+    position: { x: 285, y: 75 },
     data: { label: "" },
     style: { backgroundColor: "lightblue" }, // Rectangle
     draggable: false, // Prevent node dragging
@@ -147,7 +97,7 @@ const computedNodes = computed(() => [
   },
   {
     id: "land-sink",
-    position: { x: canvasWidth.value *0.3, y: 160 },
+    position: { x: 200, y: 160 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -158,17 +108,15 @@ const computedNodes = computed(() => [
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: box_width.value + "px",
+      width: '160px',
       height: '60px',
       color: "white",
-      fontSize: `${fontSize1.value}px`,
-
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "ocean-sink",
-    position: { x: canvasWidth.value *0.55, y: 160 },
+    position: { x: 375, y: 160 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -180,16 +128,14 @@ const computedNodes = computed(() => [
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: box_width.value + "px",
+      width: '160px',
       height: '60px',
-      fontSize: `${fontSize1.value}px`,
-
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "co2-growth-rate",
-    position: { x: canvasWidth.value *0.8, y: 160 },
+    position: { x: 550, y: 160 },
     data: { label: "Atmospheric CO₂ \nGrowth Rate\n from OCO-2 data" },
     style: {
       backgroundColor: "#5eabe6",
@@ -201,15 +147,58 @@ const computedNodes = computed(() => [
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: box_width.value + "px",
+      width: '160px',
       height: '60px',
-      fontSize: `${fontSize2.value}px`,
-
+      fontSize: "12px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
+  // {
+  //   id: "co2-growth-rate2",
+  //   position: { x: 520, y: 180 },
+  //   data: { label: " from satellite data" },
+  //   style: {
+  //     color: "#2b2b30",
+  //     borderStyle: "none",
+  //     fontSize: "12px",
+  //   }, // Rectangle
+  //   draggable: false, // Prevent node dragging
+  // },
+  // {
+  //   id: "ff",
+  //   position: { x: 370, y: 280 },
+  //   data: { label: "FF" },
+  //   style: {
+  //     backgroundColor: "#2b2b30",
+  //     color: "white",
+  //     whiteSpace: "pre-wrap",
+  //     display: "flex",
+  //     justifyContent: "center",
+  //     alignItems: "center",
+  //     textAlign: "center",
+  //     borderRadius: "100px",
+  //     padding: "20px",
+  //   }, // Rectangle
+  //   draggable: false, // Prevent node dragging
+  // },
+  // {
+  //   id: "+",
+  //   position: { x: 470, y: 160 },
+  //   data: { label: "+" },
+  //   style: {
+  //     color: "#2b2b30",
+  //     borderStyle: "none",
+  //   }, // Rectangle
+  //   draggable: false, // Prevent node dragging
+  // },
+  // {
+  //   id: "+2",
+  //   position: { x: 325, y: 160 },
+  //   data: { label: "+" },
+  //   style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
+  //   draggable: false, // Prevent node dragging
+  // },
 ]);
-
 
 const edges = ref([
   {
@@ -311,12 +300,17 @@ const edges = ref([
 
   },
 ]);
+
+// Register the Vue Flow component
 </script>
 
 <style scoped>
 .flowchart-container {
-  height: 300px;
+  height: 300px; /* Set the fixed height */
   background-color: #ffffff;
+  /* border: 2px solid #4d4d4d;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.518); */
 }
 
 .custom-node {
@@ -324,7 +318,7 @@ const edges = ref([
 }
 
 .custom-node:hover {
-  background-color: #f0f0f0;
-  transform: scale(1.05);
+  background-color: #f0f0f0; /* Change the color when hovered */
+  transform: scale(1.05); /* Slightly enlarge the node */
 }
 </style>

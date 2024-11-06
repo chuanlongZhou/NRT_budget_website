@@ -22,7 +22,17 @@
       "scholarUrl": "",
       "githubUrl": ""
     },
-
+    {
+      "name": "Yi Xi",
+      "title": "Research scientist",
+      "institute":"LSCE",
+      "description": "Yi is a post-doctoral researcher at LSCE. During her Ph.D., she worked on simulating the dynamics of natural wetland areas and their methane emissions. Currently, she is developing critical permafrost processes missing from current land surface models, using ORCHIDEE-MICT model. She hopes to explore nature’s mysteries through her research and find inspiration for her own life.",
+      "photo": "yixi.jpeg",
+      "email": "yi.xi@lsce.ipsl.fr",
+      "homeUrl": "",
+      "scholarUrl": " https://scholar.google.com.hk/citations?hl=en&user=_RN_3z8AAAAJ&view_op=list_works&sortby=pubdate",
+      "githubUrl": ""
+    },
     {
       "name": "Chuanlong Zhou",
       "title": "Research scientist",

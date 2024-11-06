@@ -32,10 +32,10 @@
     <section id="introduction" class="my-5 section-offset">
       <p>
         Two independent and complementary approaches are used to estimate the
-        global CO2 budget and the regional distribution of emissions and natural
-        CO2 sinks. The two approaches are very consistent globally and they show
-        similar anomalies at the regional level, but we see more contrasted flux
-        anomalies in the inversion.
+        global CO<sub>2</sub> budget and the regional distribution of emissions
+        and natural CO<sub>2</sub> sinks. The two approaches are very consistent
+        globally and they show similar anomalies at the regional level, but we
+        see more contrasted flux anomalies in the inversion.
       </p>
       <br />
 
@@ -44,17 +44,19 @@
         <v-col cols="6" lg="5" md="12" sm="12" xs="12" class="content_text">
           <u><b>Top-down carbon budget </b></u>
 
-          is based on satellite observations of atmospheric column averaged CO2
+          is based on satellite observations of atmospheric column averaged
+          CO<sub>2</sub>
           concentration with global coverage by the
           <a href="https://ocov2.jpl.nasa.gov/" target="_blank">
-            OCO2 satellite of NASA
+            OCO<sub>2</sub> satellite of NASA
           </a>
           using an atmospheric
           <a href="https://atmosphere.copernicus.eu/" target="_blank">
             inversion model
           </a>
-          to translate these observations into weekly maps of CO2 fluxes over
-          land and oceans. The inversion model uses as input fossil CO2
+          to translate these observations into weekly maps of CO<sub>2</sub>
+          fluxes over land and oceans. The inversion model uses as input fossil
+          CO<sub>2</sub>
           emissions and the latest wind fields for the year considered.
         </v-col>
         <v-col cols="6" lg="6" md="12" sm="12" xs="12">
@@ -66,11 +68,11 @@
         <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
         <v-col cols="6" lg="5" md="12" sm="12" xs="12" class="content_text">
           <u><b>Bottom-up carbon budget</b></u>
-          is based on near real time fossil CO2 emissions based on activity data
-          from
+          is based on near real time fossil CO<sub>2</sub> emissions based on
+          activity data from
           <a href="https://carbonmonitor.org/" target="_blank">
             Carbon Monitor</a
-          >, atmospheric CO2 monthly data from the
+          >, atmospheric CO<sub>2</sub> monthly data from the
           <a
             href="https://www.noaa.gov/media-release/noaa-partners-with-scripps-institution-of-oceanography-on-unmanned-systems"
             target="_blank"
@@ -91,77 +93,78 @@
 
     <section id="section1" class="my-5 section-offset">
       <h2>Global Carbon Budget</h2>
-      <v-row justify="center" align="center">
-        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
-        <v-col cols="6">
-          <p class="content_text">
-            Here we see the global growth rate of atmospheric CO2 seen from
-            surface marine stations from NOAA and from the Mauna Loa observatory
-            from NOAA and SCRIPPS, the longest atmospheric record. The year 2003
-            shows a record high growth rate at Mauna Loa and a very high growth
-            rate at the marine stations.
+      <v-row>
+        <v-col cols="12" md="6" class="d-flex justify-start pt-15">
+          <p class="content_text pt-10">
+            Here we see the global growth rate of atmospheric CO<sub>2</sub>
+            seen from surface marine stations from NOAA and from the Mauna Loa
+            observatory from NOAA and SCRIPPS, the longest atmospheric record.
+            The year 2003 shows a record high growth rate at Mauna Loa and a
+            very high growth rate at the marine stations.
           </p>
         </v-col>
-        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
 
-        <v-col lg="6" md="6" sm="12" xs="12">
+        <v-col cols="12" md="6" class="d-flex justify-center align-center">
           <v-img
             class="image py-1"
-            src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/main_1.png?raw=true"
-            width="450"
+            src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/main_1.png?raw=true"
+            width="400"
           ></v-img>
         </v-col>
       </v-row>
 
-      <v-row justify="center" align="center">
-        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
-        <v-col cols="6">
-          <p class="content_text">
+      <v-row>
+        <v-col cols="12" md="6" class="d-flex justify-start pt-5">
+          <p class="content_text pt-10 mr-2">
             Here we see the global budget, showing the fate of carbon from
-            fossil CO2 emissions which stays in the atmosphere and makes the
-            atmospheric growth rate (blue), or is absorbed by the land (green)
-            or the ocean reservoirs (blue-green). The bottom up budget is the
-            large bar. The top down inversion budget is he inside bar.
+            fossil CO<sub>2</sub> emissions which stays in the atmosphere and
+            makes the atmospheric growth rate (blue), or is absorbed by the land
+            (green) or the ocean reservoirs (blue-green). The bottom up budget
+            is the large bar. The top down inversion budget is he inside bar.
           </p>
         </v-col>
-        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
 
-        <v-col lg="6" md="6" sm="12" xs="12">
+        <v-col cols="12" md="6" class="d-flex justify-center align-center">
           <v-img
-            class="image py-5"
-            src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/main_2.png?raw=true"
-            width="450"
+            class="image py-1"
+            src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/main_2.png?raw=true"
+            width="400"
           ></v-img>
         </v-col>
       </v-row>
+
       <v-row justify="center" align="center">
-        <v-col lg="6" md="6" sm="12" xs="12">
+        <v-col col="12" md="10" sm="12" xs="12">
           <v-expansion-panels class="mt-10" color="primary">
-            <v-expansion-panel
-              title="Global Map of the CO2 fluxes anomalies in 2023"
-              class="content_text"
-            >
+            <v-expansion-panel class="content_text">
+              <template v-slot:title>
+                <h3 class="custom-title">
+                  Global Map of the Carbon Dioxide fluxes anomalies in 2023
+                </h3>
+              </template>
+
               <v-expansion-panel-text>
                 <p class="content_text">
-                  Here we see the maps of the CO2 fluxes anomalies in 2023 from
-                  the reference period 2015-2022 from the bottom up or the top
-                  down methods (left: Bottom-up, right:Inversion).
+                  Here we see the maps of the CO<sub>2</sub> fluxes anomalies in
+                  2023 from the reference period 2015-2022 from the bottom up or
+                  the top down methods (left: Bottom-up, right: Inversion).
                 </p>
 
                 <v-carousel
                   cycle
                   show-arrows="hover"
                   hide-delimiter-background
-                  height="250"
+                  height="450"
                   class="mt-5"
                 >
                   <v-carousel-item v-for="(slide, i) in slides" :key="i">
-                    <p class="content_text">{{ slide.title }}</p>
+                    <p class="content_text pb-10">{{ slide.title }}</p>
                     <v-img :src="slide.scr" width="100%"></v-img>
                   </v-carousel-item>
                 </v-carousel>
+
                 <v-img
-                  src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/map/colorbar.png?raw=true"
+                  src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/map/colorbar.png?raw=true"
                   width="25%"
                 ></v-img>
               </v-expansion-panel-text>
@@ -193,23 +196,23 @@ import { ref } from "vue";
 const slides = ref([
   {
     title: "Annual",
-    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/map/annual.png?raw=true",
+    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/map/annual.png?raw=true",
   },
   {
     title: "Jan.&Feb.&Mar.",
-    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/map/JFM.png?raw=true",
+    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/map/JFM.png?raw=true",
   },
   {
     title: "Apr.&May&Jun.",
-    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/map/AMJ.png?raw=true",
+    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/map/AMJ.png?raw=true",
   },
   {
     title: "Jul.&Aug.&Sep.",
-    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/map/JAS.png?raw=true",
+    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/map/JAS.png?raw=true",
   },
   {
     title: "Oct.&Nov.&Dec.",
-    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/58bed7a38018333880e349fbbccfe5d73e93fc8a/map/OND.png?raw=true",
+    scr: "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/map/OND.png?raw=true",
   },
 ]);
 </script>

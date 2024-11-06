@@ -8,17 +8,17 @@
         <p class="overline pt-3">
           A WAKE UP CALL TO THE CARBON BUDGET?
           <a
-            href="https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwae365/7831649?searchresult=1"
+            href="https://academic.oup.com/nsr/advance-article/doi/10.1093/nsr/nwae367/7831648 "
             target="_blank"
           >
-            OUR PAPER
+          OUR SCIENTIFIC  PUBLICATION
           </a>
         </p>
         <br />
         <p>
-          It is crucial to monitor how human caused CO2 emissions change with
+          It is crucial to monitor how human caused CO<sub>2</sub> emissions change with
           time and how the land and ocean carbon sinks help us mitigating
-          climate warming by capturing CO2. The
+          climate warming by capturing CO<sub>2</sub>. The
           <a
             href="https://essd.copernicus.org/articles/14/4811/2022/"
             target="_blank"
@@ -26,7 +26,7 @@
             current assessment
           </a>
           provides an update of the budget one year ago. Here we accelerate the
-          time and provide each quarter a synthesis of emissions and natural CO2
+          time and provide each quarter a synthesis of emissions and natural CO<sub>2</sub>
           sinks based on the latest atmospheric data and a suite of
           <a href="https://arxiv.org/abs/2407.12447" target="_blank">
             peer-reviewed modeling approaches </a

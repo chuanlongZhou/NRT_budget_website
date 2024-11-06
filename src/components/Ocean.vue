@@ -12,7 +12,7 @@
     <v-col lg="6" md="6" sm="12" xs="12">
       <v-img
           class="image py-5"
-          src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean_map.png?raw=true"
+          src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean_map.png?raw=true"
           width="500"
         ></v-img>
     </v-col>
@@ -48,39 +48,54 @@
       </v-row>
 
       <v-row v-if="toggle.length > 0">
-        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
-        <v-col col="6">
-          DGVM -{{ regions[toggle[0]].title }}
+        <v-col col="4">
+          Ocean AI Data Products -{{ regions[toggle[0]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[0]].scr_1"
             width="350"
           ></v-img>
         </v-col>
-        <v-col cols="6">
-          Inversion - {{ regions[toggle[0]].title }}
+        <v-col cols="4">
+          Ocean AI Models - {{ regions[toggle[0]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[0]].scr_2"
             width="350"
           ></v-img>
         </v-col>
+        <v-col cols="4">
+          Atmospheric Inversion - {{ regions[toggle[0]].title }}
+          <v-img
+            class="image py-5"
+            :src="regions[toggle[0]].scr_3"
+            width="350"
+          ></v-img>
+        </v-col>
       </v-row>
+      
       <v-row v-if="toggle.length > 1">
-        <v-col cols="6" lg="1" md="0" sm="0" xs="0"> </v-col>
-        <v-col col="6">
-          DGVM -{{ regions[toggle[1]].title }}
+        <v-col col="4">
+          Ocean AI Data Products -{{ regions[toggle[1]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[1]].scr_1"
             width="350"
           ></v-img>
         </v-col>
-        <v-col cols="6">
-          Inversion - {{ regions[toggle[1]].title }}
+        <v-col cols="4">
+          Ocean AI Models - {{ regions[toggle[1]].title }}
           <v-img
             class="image py-5"
             :src="regions[toggle[1]].scr_2"
+            width="350"
+          ></v-img>
+        </v-col>
+        <v-col cols="4">
+          Atmospheric Inversion - {{ regions[toggle[1]].title }}
+          <v-img
+            class="image py-5"
+            :src="regions[toggle[1]].scr_3"
             width="350"
           ></v-img>
         </v-col>
@@ -97,51 +112,65 @@ const regions = ref([
   {
   title: "global",
   scr_1:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_datapro_box_globe.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Data Products_Globe.png?raw=true",
   scr_2:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_inversion_box_globe.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Models_Globe.png?raw=true",
+  scr_3:
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean Atmospheric Inversion_Globe.png?raw=true",
 },
 {
   title: "Arctic",
   scr_1:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_datapro_box_globe.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Data Products_Arctic.png?raw=true",
   scr_2:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_inversion_box_globe.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Models_Arctic.png?raw=true",
+  scr_3:
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean Atmospheric Inversion_Arctic.png?raw=true",
 },
 {
   title: "Atlantic",
   scr_1:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_datapro_box_atlantic.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Data Products_Atlantic.png?raw=true",
   scr_2:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_inversion_box_atlantic.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Models_Atlantic.png?raw=true",
+  scr_3:
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean Atmospheric Inversion_Atlantic.png?raw=true",
 },
 {
   title: "Coast",
   scr_1:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_datapro_box_coast.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Data Products_Coast.png?raw=true",
   scr_2:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_inversion_box_coast.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Models_Coast.png?raw=true",
+  scr_3:
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean Atmospheric Inversion_Coast.png?raw=true",
 },
 {
   title: "Indian",
   scr_1:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_datapro_box_indian.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Data Products_Indian.png?raw=true",
   scr_2:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_inversion_box_indian.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Models_Indian.png?raw=true",
+  scr_3:
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean Atmospheric Inversion_Indian.png?raw=true",
 },
 {
   title: "Pacific",
   scr_1:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_datapro_box_pacific.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Data Products_Pacific.png?raw=true",
   scr_2:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_inversion_box_pacific.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Models_Pacific.png?raw=true",
+  scr_3:
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean Atmospheric Inversion_Pacific.png?raw=true",
 },
 {
   title: "Southern",
   scr_1:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_datapro_box_southern.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Data Products_Southern.png?raw=true",
   scr_2:
-    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/5c3aa25df900d113aa45ef5a88d59b20eb706321/ocean/Ocean_inversion_box_southern.png?raw=true",
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean AI Models_Southern.png?raw=true",
+  scr_3:
+    "https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/ocean/Ocean Atmospheric Inversion_Southern.png?raw=true",
 },
 
 ]);

@@ -1,6 +1,7 @@
 <template>
   <vue-flow
-    :nodes="nodes"
+    ref="vueFlowRefA"
+    :nodes="computedNodes"
     :edges="edges"
     class="flowchart-container"
     :zoom-on-scroll="false"
@@ -8,47 +9,65 @@
     :pan-on-drag="false"
     :fit-view="false"
   >
-    <!-- <Background pattern-color="#aaa" :gap="16" /> -->
-    <defs>
-      <!-- Define marker for the end of the edge -->
-      <marker
-        id="end-arrow"
-        viewBox="0 0 10 10"
-        refX="10"
-        refY="5"
-        markerWidth="6"
-        markerHeight="6"
-        orient="auto"
-      >
-        <path d="M0,0 L10,5 L0,10 Z" fill="#ff5722" />
-      </marker>
-
-      <!-- Define marker for the start of the edge (optional) -->
-      <marker
-        id="start-circle"
-        viewBox="0 0 10 10"
-        refX="5"
-        refY="5"
-        markerWidth="5"
-        markerHeight="5"
-      >
-        <circle cx="5" cy="5" r="3" fill="#ff5722" />
-      </marker>
-    </defs>
   </vue-flow>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { Position, VueFlow, MarkerType} from "@vue-flow/core";
-import { Background } from "@vue-flow/background";
+import { ref, computed, onMounted, onBeforeUnmount } from "vue";
+import { Position, VueFlow, MarkerType } from "@vue-flow/core";
 import "@vue-flow/core/dist/style.css"; // Vue Flow core styles
 
-// Define nodes and edges for the flowchart
-const nodes = ref([
+// References for canvas dimensions and Vue Flow element
+const vueFlowRefA = ref(null);
+const canvasWidth = ref(872);
+const canvasHeight = ref(300);
+const box_width = ref(160);
+const box_height = ref(50);
+const fontSize1 = ref(16);
+const fontSize2 = ref(12);
+
+// ResizeObserver to monitor vue-flow element size
+let resizeObserver;
+
+const updateCanvasSize = () => {
+  if (vueFlowRefA.value) {
+    const { offsetWidth, offsetHeight } = vueFlowRefA.value.$el; // Access actual DOM element size
+    canvasWidth.value = offsetWidth;
+    canvasHeight.value = offsetHeight;
+    box_width.value = Math.min((offsetWidth-50) * 0.2, 160);
+    console.log("Canvas size updated:", canvasWidth.value, canvasHeight.value);
+    if (offsetWidth < 600) {
+      fontSize1.value = 12;
+      fontSize2.value = 10;
+      box_height.value = 60;
+    } else {
+      fontSize1.value = 16;
+      fontSize2.value = 12;
+    }
+  }
+};
+
+// Initialize the ResizeObserver on mount
+onMounted(() => {
+  resizeObserver = new ResizeObserver(updateCanvasSize);
+  if (vueFlowRefA.value) {
+    resizeObserver.observe(vueFlowRefA.value.$el); // Observe changes to the vue-flow element size
+  }
+  updateCanvasSize(); // Initial size setup
+});
+
+// Cleanup ResizeObserver on unmount
+onBeforeUnmount(() => {
+  if (resizeObserver && vueFlowRefA.value) {
+    resizeObserver.unobserve(vueFlowRefA.value.$el);
+  }
+});
+
+// Define computed nodes based on canvas size
+const computedNodes = computed(() => [
   {
     id: "fossil-emissions",
-    position: { x: 25, y: 160 },
+    position: { x: canvasWidth.value *0.05, y: 160 },
     data: { label: "Fossil Emissions \nEstimates" },
     style: {
       backgroundColor: "gray",
@@ -60,16 +79,18 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: '160px',
-      height: '60px',
+      width: box_width.value + "px",
+      fontSize: `${fontSize1.value}px`,
+
+      height: "60px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
     sourcePosition: Position.Top,
   },
-  
+
   {
     id: "n5",
-    position: { x: 40+50, y: 50 },
+    position: { x: canvasWidth.value *0.15, y: 50 },
     data: { label: "Land Models" },
     style: {
       backgroundColor: "#92D050",
@@ -83,21 +104,23 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: '160px',
-      height: '60px',
+      width: box_width.value + "px",
+      fontSize: `${fontSize1.value}px`,
+
+      height: "60px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
     targetPosition: Position.Left,
   },
   {
     id: "n52",
-    position: { x: 40+50, y: 50 },
+    position: { x: canvasWidth.value *0.15, y: 50 },
     draggable: false, // Prevent node dragging
     sourcePosition: Position.Right,
   },
   {
     id: "n6",
-    position: { x: 275, y: 50 },
+    position: { x: canvasWidth.value *0.4, y: 50 },
     data: { label: "Land AI models \n(emulators)" },
     style: {
       backgroundColor: "#92D050",
@@ -110,15 +133,17 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: '160px',
-      height: '60px',
+      width: box_width.value + "px",
+      fontSize: `${fontSize1.value}px`,
+
+      height: "60px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
     targetPosition: Position.Left,
   },
   {
     id: "n7",
-    position: { x: 350+100, y: 50 },
+    position: { x: canvasWidth.value *0.65, y: 50 },
     data: { label: "Ocean AI models \n(emulators)" },
     style: {
       backgroundColor: "#4472C4",
@@ -132,22 +157,16 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: '160px',
-      height: '60px',
+      width: box_width.value + "px",
+      fontSize: `${fontSize1.value}px`,
+
+      height: "60px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
-    id: "atmospheric-inversion2",
-    position: { x: 290+175, y: 270 },
-    data: { label: "" },
-    style: { backgroundColor: "lightblue" }, // Rectangle
-    draggable: false, // Prevent node dragging
-    targetPosition: Position.Right,
-  },
-  {
     id: "land-sink",
-    position: { x: 195, y: 160 },
+    position: { x: canvasWidth.value *0.25, y: 160 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -158,14 +177,16 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: '160px',
-      height: '60px',
+      width: box_width.value + "px",
+      fontSize: `${fontSize1.value}px`,
+
+      height: "60px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "ocean-sink",
-    position: { x: 365, y: 160 },
+    position: { x: canvasWidth.value *0.45, y: 160 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -177,15 +198,19 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "10px",
-      width: '160px',
-      height: '60px',
+      width: box_width.value + "px",
+      fontSize: `${fontSize1.value}px`,
+
+      height: "60px",
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "co2-growth-rate",
-    position: { x: 550-15, y: 160 },
-    data: { label: "Atmospheric CO₂\n Growth Rate from\n NOAA and SCRIPPS stations" },
+    position: { x: canvasWidth.value *0.65, y: 160 },
+    data: {
+      label: "Atmospheric CO₂\n Growth Rate from\n NOAA and SCRIPPS stations",
+    },
     style: {
       backgroundColor: "#5eabe6",
       color: "white",
@@ -196,9 +221,11 @@ const nodes = ref([
       textAlign: "center",
       borderRadius: "5px",
       padding: "1px",
-      width: '160px',
-      height: '60px',
-      fontSize: "11px",
+      width: box_width.value + "px",
+
+      height: "60px",
+      fontSize: `${fontSize2.value}px`,
+
     }, // Rectangle
     draggable: false, // Prevent node dragging
   },
@@ -222,7 +249,7 @@ const nodes = ref([
   // },
   {
     id: "+",
-    position: { x: 375-20, y: 150+30 },
+    position: { x: canvasWidth.value *0.84, y: 150 + 30 },
     data: { label: "+" },
     style: {
       color: "#2b2b30",
@@ -232,21 +259,21 @@ const nodes = ref([
   },
   {
     id: "+2",
-    position: { x: 550-25, y: 150+30 },
+    position: { x: canvasWidth.value *0.635, y: 150 + 30 },
     data: { label: "+" },
     style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "+3",
-    position: { x: 550+145, y: 150+30 },
+    position: { x: canvasWidth.value *0.435, y: 150 + 30 },
     data: { label: "+" },
     style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
     draggable: false, // Prevent node dragging
   },
   {
     id: "=",
-    position: { x: 200-15, y: 150+30 },
+    position: { x: canvasWidth.value *0.235, y: 150 + 30 },
     data: { label: "=" },
     style: { color: "#2b2b30", borderStyle: "none" }, // Rectangle
     draggable: false, // Prevent node dragging
@@ -260,7 +287,7 @@ const nodes = ref([
   // },
   {
     id: "+4",
-    position: { x: 550+135, y:155 },
+    position: { x: canvasWidth.value *0.83, y: 155 },
     data: { label: "Budget \nImbalance" },
     style: {
       color: "#2b2b30",
@@ -295,11 +322,11 @@ const edges = ref([
     type: "smoothstep",
     animated: true,
     markerEnd: {
-          type: MarkerType.ArrowClosed,
-          width: 20, // Adjust the width of the arrow
-          height: 20, // Adjust the height of the arrow
-          color: 'black',
-        },
+      type: MarkerType.ArrowClosed,
+      width: 20, // Adjust the width of the arrow
+      height: 20, // Adjust the height of the arrow
+      color: "black",
+    },
     style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
   },
   {
@@ -374,11 +401,11 @@ const edges = ref([
     type: "smoothstep",
     animated: true,
     markerEnd: {
-          type: MarkerType.ArrowClosed,
-          width: 20, // Adjust the width of the arrow
-          height: 20, // Adjust the height of the arrow
-          color: 'black',
-        },
+      type: MarkerType.ArrowClosed,
+      width: 20, // Adjust the width of the arrow
+      height: 20, // Adjust the height of the arrow
+      color: "black",
+    },
     style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
   },
   {
@@ -388,11 +415,11 @@ const edges = ref([
     type: "smoothstep",
     animated: true,
     markerEnd: {
-          type: MarkerType.ArrowClosed,
-          width: 20, // Adjust the width of the arrow
-          height: 20, // Adjust the height of the arrow
-          color: 'black',
-        },
+      type: MarkerType.ArrowClosed,
+      width: 20, // Adjust the width of the arrow
+      height: 20, // Adjust the height of the arrow
+      color: "black",
+    },
     style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
   },
   {
@@ -402,11 +429,11 @@ const edges = ref([
     type: "smoothstep",
     animated: true,
     markerEnd: {
-          type: MarkerType.ArrowClosed,
-          width: 20, // Adjust the width of the arrow
-          height: 20, // Adjust the height of the arrow
-          color: 'black',
-        },
+      type: MarkerType.ArrowClosed,
+      width: 20, // Adjust the width of the arrow
+      height: 20, // Adjust the height of the arrow
+      color: "black",
+    },
     style: { stroke: "#575759", strokeWidth: 1 }, // Thicker stroke
   },
 ]);
