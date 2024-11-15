@@ -178,13 +178,13 @@
     <v-divider></v-divider>
 
     <section id="section2" class="my-5 section-offset">
-      <h2>Land Carbon Regional Flux</h2>
+      <h2>Land Carbon Regional Fluxes </h2>
       <Land />
     </section>
 
     <v-divider></v-divider>
     <section id="section3" class="my-5 section-offset">
-      <h2>Ocean Carbon Regional Flux</h2>
+      <h2>Ocean Carbon Regional Fluxes </h2>
       <Ocean />
     </section>
   </v-container>

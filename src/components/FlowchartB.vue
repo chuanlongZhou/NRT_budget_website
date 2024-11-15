@@ -39,11 +39,11 @@ const updateCanvasSize = () => {
     if (offsetWidth < 600) {
       fontSize1.value = 12;
       fontSize2.value = 10;
-      box_height.value = 75;
+      box_height.value = 80;
     } else if (offsetWidth < 800) {
       fontSize1.value = 12;
       fontSize2.value = 10;
-      box_height.value = 60;
+      box_height.value = 75;
     } 
     else {
       fontSize1.value = 16;
