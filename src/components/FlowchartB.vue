@@ -34,7 +34,7 @@ const updateCanvasSize = () => {
     const { offsetWidth, offsetHeight } = vueFlowRefA.value.$el; // Access actual DOM element size
     canvasWidth.value = offsetWidth;
     canvasHeight.value = offsetHeight;
-    box_width.value = Math.min((offsetWidth-50) * 0.2, 160);
+    box_width.value = Math.min((offsetWidth-50) * 0.2, 175);
     console.log("Canvas size updated:", canvasWidth.value, canvasHeight.value);
     if (offsetWidth < 600) {
       fontSize1.value = 12;
@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
 const computedNodes = computed(() => [
   {
     id: "fossil-emissions",
-    position: { x: canvasWidth.value *0.05, y: 160 },
+    position: { x: canvasWidth.value *0.05, y: 175 },
     data: { label: "Fossil Emissions \nEstimates" },
     style: {
       backgroundColor: "gray",
@@ -171,7 +171,7 @@ const computedNodes = computed(() => [
   },
   {
     id: "land-sink",
-    position: { x: canvasWidth.value *0.25, y: 160 },
+    position: { x: canvasWidth.value *0.25, y: 175 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -191,7 +191,7 @@ const computedNodes = computed(() => [
   },
   {
     id: "ocean-sink",
-    position: { x: canvasWidth.value *0.45, y: 160 },
+    position: { x: canvasWidth.value *0.45, y: 175 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -212,7 +212,7 @@ const computedNodes = computed(() => [
   },
   {
     id: "co2-growth-rate",
-    position: { x: canvasWidth.value *0.65, y: 160 },
+    position: { x: canvasWidth.value *0.65, y: 175 },
     data: {
       label: "Atmospheric CO₂\n Growth Rate from\n NOAA and SCRIPPS stations",
     },

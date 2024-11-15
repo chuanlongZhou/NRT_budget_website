@@ -97,7 +97,7 @@ const computedNodes = computed(() => [
   
   {
     id: "fossil-emissions",
-    position: { x: canvasWidth.value *0.05, y: 160 },
+    position: { x: canvasWidth.value *0.05, y: 175 },
     data: { label: "Fossil Emissions \nEstimates" },
     style: {
       backgroundColor: "gray",
@@ -152,7 +152,7 @@ const computedNodes = computed(() => [
   },
   {
     id: "land-sink",
-    position: { x: canvasWidth.value *0.3, y: 160 },
+    position: { x: canvasWidth.value *0.3, y: 175 },
     data: { label: "Land Sink" },
     style: {
       backgroundColor: "#16a124",
@@ -173,7 +173,7 @@ const computedNodes = computed(() => [
   },
   {
     id: "ocean-sink",
-    position: { x: canvasWidth.value *0.55, y: 160 },
+    position: { x: canvasWidth.value *0.55, y: 175 },
     data: { label: "Ocean Sink" },
     style: {
       backgroundColor: "#0c127d",
@@ -194,7 +194,7 @@ const computedNodes = computed(() => [
   },
   {
     id: "co2-growth-rate",
-    position: { x: canvasWidth.value *0.8, y: 160 },
+    position: { x: canvasWidth.value *0.8, y: 175 },
     data: { label: "Atmospheric CO₂ \nGrowth Rate\n from OCO-2 data" },
     style: {
       backgroundColor: "#5eabe6",

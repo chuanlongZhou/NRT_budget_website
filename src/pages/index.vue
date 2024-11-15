@@ -106,7 +106,7 @@
 
         <v-col cols="12" md="6" class="d-flex justify-center align-center">
           <v-img
-            class="image py-1 ml-10"
+            class="image py-1"
             src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/main_1.png?raw=true"
             width="400"
           ></v-img>
@@ -130,6 +130,7 @@
             src="https://github.com/chuanlongZhou/carbon_budget_web_image/blob/main/main_2.png?raw=true"
             width="400"
           ></v-img>
+
         </v-col>
       </v-row>
 
